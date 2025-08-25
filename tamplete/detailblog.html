@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+<div class="container">
+<br>
+<center><div class="display-1"><font style="color:#3ee4ed"><b>Blog</b></font></div></center>
+</div>
+<br>
+<div class="container">
+<div class="row">
+<div class="col-md-12 mt-4">
+<img src="{{i.Image.url}}" class="card-img-top" alt="..." height="10%" width="50%">
+  <div class="card-body"><br>
+    <h2 class="card-title" style="color:#3ee4ed">{{i.Title}}</h2>
+    <p class="card-text">{{i.des|safe|linebreaks}}</p>
+   
+  </div>
+</div>
+</div>
+ 
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

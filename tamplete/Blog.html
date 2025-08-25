@@ -1,0 +1,85 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<html>
+<head><title></title>
+    <link rel="stylesheet" href="{%static 'css/aos.css' %}">
+<style>
+    .background-div {
+        background-image: url("{% static 'whwedo.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        padding: 100px 0; /* Adjust the padding as needed */
+    }
+
+    .blog-title {
+        color: #3ee4ed;
+        margin-bottom: 50px;
+    }
+
+    .card {
+        border: none;
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+    }
+
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .card-text {
+        color: #555;
+    }
+
+    .btn-view-more {
+        color: #3ee4ed;
+        border-color: #3ee4ed;
+        transition: all 0.3s ease;
+    }
+
+    .btn-view-more:hover {
+        color: #fff;
+        background-color: #3ee4ed;
+    }
+</style>
+</head>
+<body>
+    <center>
+    <h1 class="display-3 text-info"><b><div data-aos="fade-down">Blog</div></h1></b>
+    </div></center>
+<div class="container mt-5">
+    <div class="row">
+        {% for i in data %}
+        <div class="col-md-4 mb-4">
+            <div class="card shadow"  data-aos="flip-left">
+                <img src="{{ i.Image.url }}" class="card-img-top" alt="Blog Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{ i.Title|truncatechars:25 }}</h5>
+                    <p class="card-text">{{ i.des|truncatechars:65|safe }}</p>
+                    <a href="{% url 'detailblog' id=i.id %}" class="btn btn-view-more rounded-pill">View More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- animation satrt below -->
+<script src="{%static 'js/aos.js' %}"> </script>
+  <script>
+    AOS.init()
+  </script>
+
+{% endblock %}
+</body>
+</html>

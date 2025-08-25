@@ -1,0 +1,135 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract Website</title>
+    <style>
+        /* Define a class to apply animated border color */
+        .animated-border {
+            border: 3px solid  #00cccc ; /* Set initial border color (blue in this example) */
+            padding: 10px; /* Optional: Add padding for better appearance */
+            width: 370px; /* Optional: Set width for demonstration */
+            animation: animateBorder 1s infinite alternate; /* Apply animation to the border */
+        }
+
+        /* Define the animation */
+        @keyframes animateBorder {
+            0% {
+                border-color: #0000cc; /* Start with blue */
+            }
+            100% {
+                border-color: #3ee4ed; /* End with red */
+            }
+        }
+       body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .loading-spinner-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+        z-index: 9999;
+    }
+
+    .loading-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        border: 2px solid #3498db; /* Blue border */
+        border-top: 2px solid #8A2BE2; /* Yellow border on top for spinner effect */
+        border-radius: 50%;
+        animation: spin 1s linear infinite; /* Animation for spinning effect */
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    
+    </style>
+</head>
+<body>
+    <div class="row">
+<div class="col-6">
+
+
+<br><br><BR>
+<h2 class="display-5 text-info"><b><img id="myImage" src="https://html.designingmedia.com/whizcyber/assets/images/section2-list-img.png" alt="My Image"> PHISHING<br>&nbsp;&nbsp;WEBSITE</b></h2>
+<br>
+<p><b>Welcome to our Intelliguard Cyber Phishing Website Scanning page, Phishing website scanning refers to the process of examining websites to identify and assess potential phishing threats. This involves analyzing various aspects of the website to determine if it is designed to deceive users into disclosing sensitive information such as login credentials, financial details, or personal data. Phishing website scanning typically involves automated tools or manual inspection by cybersecurity professionals. The goal is to identify and mitigate phishing attacks by detecting and removing malicious or deceptive content from websites before they can harm users.</p></b>
+</div>
+
+
+    <div class="col-5 mb-3">
+        <br><br>
+        
+         
+        <div class="card shadow animated-border">
+
+            <div class="card-body"><center><img src="https://cdn3d.iconscout.com/3d/premium/thumb/web-monitoring-7743680-6805596.png" width="90%" height="70%"></img></center>
+                <br>
+    <form method="post">
+        {% csrf_token %}
+        <label for="link"><b>Enter website link</label><br></b>
+        <input type="text" id="link" name="link" placeholder="www.example.com" class="form-control rounded-pill shadow"><br>
+        <center><button type="submit" id="scan-button" class="btn btn-info btn-lg w-40 mb-3-10px rounded-pill">Scan</button></center>
+        <div id="loading-spinner" class="loading-spinner-container">
+               <div class="loading-spinner"></div>
+    </form>
+
+    <script>
+    // Function to show the loading spinner
+    function showLoadingSpinner() {
+        var spinner = document.getElementById("loading-spinner");
+        if (spinner) {
+            spinner.style.display = "block";
+        }
+    }
+
+    // Function to hide the loading spinner
+    function hideLoadingSpinner() {
+        var spinner = document.getElementById("loading-spinner");
+        if (spinner) {
+            spinner.style.display = "none";
+        }
+    }
+
+    // Function to simulate the scan process
+    function simulateScanProcess() {
+        // Show the loading spinner when the scan starts
+        showLoadingSpinner();
+
+        // Simulate a scan process (replace this with your actual scan process)
+        setTimeout(function() {
+            // After the scan completes (simulated with setTimeout), hide the spinner
+            hideLoadingSpinner();
+
+            // Show the scan results by updating the content of the scan-results div
+            var scanResultsDiv = document.getElementById("scan-results");
+            if (scanResultsDiv) {
+                scanResultsDiv.innerHTML = "<h2>Scan Results</h2><p>Scan completed successfully!</p>";
+                scanResultsDiv.style.display = "block"; // Show the scan results
+            }
+        }, 4000); // Simulated scan time: 3 seconds
+    }
+
+    // Event listener for the scan button
+    document.getElementById("scan-button").addEventListener("click", simulateScanProcess);
+</script>
+</body>
+</html>
+
+{% endblock %}

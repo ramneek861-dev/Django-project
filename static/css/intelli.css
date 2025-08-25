@@ -1,0 +1,18 @@
+body{
+	margin: 0;
+}
+
+p{
+	font-family:georgia;
+	/font-size: 16px;/
+	/line-height: 1.5;/
+	/margin-bottom: 10px;/
+}
+
+
+
+.gradient-text {
+    background: linear-gradient(to right, #30e3f0,#a459eb,#30e3f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

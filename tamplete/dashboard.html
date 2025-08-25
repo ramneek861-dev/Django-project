@@ -1,0 +1,114 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Quiz</title>
+  <style>
+  	.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #quiz {
+      margin-bottom: 20px;
+    }
+
+    #submitBtn {
+      display: block;
+      margin: 0 auto;
+    }
+
+    #results {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+     /* Background image */
+    body {
+      background-image: url("{% static 'images/bright.jpg' %}");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body>
+	<!-- Alert start below -->
+	<!--  -->
+	<div id="alerts">
+<h1 align="center" class="display-4"><b> <font style="color:#3ee4ed ">	<div data-aos="flip-left">Alerts</div></font></b></h1>
+  <div class="card-container">
+    {% for alert in alerts %}
+    <div class="card shadow">
+    	<p><strong>Date Published:</strong> {{ alert.date_published }}</p>
+      <h6><a href="{% url 'detailalert' id=alert.id %}">{{ alert.heading}}</a></h6>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+	<br><br>
+<!-- Education Section -->
+
+<div id="education">
+  <center>
+  <h2 style="color:#3ee4ed;">Cybersecurity Education</h2><br>
+  <div class="topic-buttons">
+    <a href="{% url 'password_security' %}" class="btn btn-white shadow  rounded-pill text-info border-info">Password Security</a>
+    <a href="{% url 'malware_prevention' %}" class="btn btn-white shadow rounded-pill text-info border-info ">Malware Prevention</a>
+     <a href="{% url 'secure_web_browsing' %}" class="btn btn-white  shadow rounded-pill text-info border-info">Secure Web Browsing</a>
+    <a href="{% url 'mobile_security' %}" class="btn btn-white shadow rounded-pill text-info border-info ">Mobile Device Security</a><br><br>
+    <a href="{% url 'social_engineering' %}" class="btn btn-white shadow rounded-pill text-info border-info">Social Engineering Awareness</a>
+    <a href="{% url 'data_protection' %}" class="btn btn-white shadow rounded-pill text-info border-info ">Data Protection and Privacy</a>
+   
+  </div>
+</div>
+</center>
+	<!--  -->
+	
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>
+
+{% endblock%}

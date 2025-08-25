@@ -1,0 +1,289 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile Device Security</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Custom CSS -->
+
+  <style>
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .card {
+    max-width: 800px; /* Increased card width */
+  }
+
+  .question {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .answers label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    font-size: 14px; /* Decreased button font size */
+  }
+
+  .btn-info:hover {
+    background-color: #138496;
+    border-color: #138496;
+  }
+
+  #results {
+    font-weight: bold;
+  }
+   body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1 class="text-center" style="color:#3ee4ed;">Mobile Device Security</h1>
+      <div class="video-container">
+        <!-- Replace the video URL below with the URL of your video tutorial -->
+        <iframe width="560" height="315" src="{%static 'vedio/mobile.mp4' %}" type="video/mp4" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <h5>Learn about mobile device security and best practices by watching the video tutorial above.</h5>
+    </div>
+    <center>
+      <p class="lead text-info">In addition to the video, here are some tips to enhance your mobile device security:</p>
+    </center>
+    <ul>
+      <li class="text-secondary">Set a strong password, PIN, or pattern lock for your device.</li>
+      <li class="text-secondary">Keep your device's operating system and apps up to date with the latest security patches.</li>
+      <li class="text-secondary">Enable device encryption to protect your data in case your device is lost or stolen.</li>
+      <li class="text-secondary">Be cautious when downloading apps and only install them from official app stores.</li>
+      <li class="text-secondary">Use a reputable mobile security app to scan for and remove malware.</li>
+    </ul>
+    <h6 class="text-center">By following these tips, you can keep your mobile device secure and protect your personal information.</h6>
+
+    <hr>
+
+    <h2 class="text-center text-info">Additional Tips for Mobile Device Security</h2>
+    <h6>Here are some additional tips to further enhance the security of your mobile device:</h6>
+    <ul>
+      <li class="text-secondary">Avoid connecting to unsecured Wi-Fi networks, especially for sensitive activities like online banking.</li>
+      <li class="text-secondary">Turn off unnecessary features like Bluetooth and NFC when not in use to minimize the risk of unauthorized access.</li>
+      <li class="text-secondary">Backup your data regularly to a secure cloud service or external storage device.</li>
+      <li class="text-secondary">Enable remote wipe and tracking features so you can locate, lock, or erase your device remotely if it's lost or stolen.</li>
+      <li class="text-secondary">Educate yourself about common mobile security threats like phishing scams and take steps to avoid them.</li>
+    </ul>
+
+    <h6>By implementing these additional measures, you can enhance the overall security of your mobile device and protect your digital assets.</h6>
+  </div>
+</div>
+<br>
+
+<!-- Blog-like information section start below  -->
+<div class="container">
+  <div class="card-container">
+    <div class="card shadow border-info p-4" style="max-width: 800px;"> <!-- Increase card width -->
+      <h2 class="text-info">Understanding Mobile Device Security</h2>
+      <p>Mobile device security is crucial for protecting your personal information and privacy on smartphones and tablets. Here are some key concepts to understand:</p>
+      <ol>
+        <li><strong>Lock Screen Protection:</strong> Setting a secure lock screen method such as a PIN, password, or pattern lock can prevent unauthorized access to your device.</li>
+        <li><strong>Operating System Updates:</strong> Keeping your device's operating system up to date with the latest security patches is essential for addressing known vulnerabilities and protecting against exploits.</li>
+        <li><strong>App Security:</strong> Downloading apps from official app stores and being cautious of permissions requested by apps can help prevent malware infections and data breaches.</li>
+        <li><strong>Encryption:</strong> Encrypting your device's data helps protect it from unauthorized access if your device is lost or stolen, ensuring that sensitive information remains secure.</li>
+        <li><strong>Mobile Security Apps:</strong> Using reputable mobile security apps can provide additional protection against malware, phishing scams, and other mobile threats.</li>
+      </ol>
+      <p>By understanding these concepts and implementing best practices for mobile device security, you can safeguard your personal information and maintain the privacy of your digital life.</p>
+    </div>
+  </div>
+</div>
+<!-- Blog-like information section end above -->
+<br>
+<br>
+
+<!-- Quiz Section start below  -->
+<div class="container">
+  <div class="card-container">
+    <div class="card shadow border-info p-4" style="max-width: 800px;"> <!-- Increase card width -->
+      <center><h2 class="text-info">Test Your Knowledge</h2></center>
+      <p class="lead text-center">Take the quiz below to test your understanding of mobile device security:</p>
+      <div id="quiz"></div>
+      <button id="submitBtn" class="btn btn-info text-light rounded-pill mt-4 px-2 py-1">Submit</button> <!-- Decrease button size -->
+      <div id="results" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const quizContainer = document.getElementById('quiz');
+  const resultsContainer = document.getElementById('results');
+  const submitButton = document.getElementById('submitBtn');
+
+  const myQuestions = [
+    {
+      question: "1. What is one key practice for mobile device security?",
+      answers: {
+        a: "Using an outdated operating system",
+        b: "Enabling device encryption",
+        c: "Downloading apps from unknown sources",
+        d: "Disabling lock screen protection"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "2. Why is it important to keep your device's operating system up to date?",
+      answers: {
+        a: "To slow down the device",
+        b: "To increase vulnerability to malware",
+        c: "To address known security vulnerabilities",
+        d: "To save battery life"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "3. What should you do if you receive a suspicious email on your mobile device?",
+      answers: {
+        a: "Click on any links or attachments in the email",
+        b: "Reply to the email with personal information",
+        c: "Delete the email without clicking on any links",
+        d: "Forward the email to all your contacts"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "4. What is the purpose of enabling device encryption?",
+      answers: {
+        a: "To increase device performance",
+        b: "To prevent unauthorized access to data",
+        c: "To allow easy sharing of data with others",
+        d: "To reduce battery consumption"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "5. Which of the following is NOT a recommended practice for mobile device security?",
+      answers: {
+        a: "Using a strong lock screen password",
+        b: "Installing apps from official app stores",
+        c: "Enabling automatic software updates",
+        d: "Disabling antivirus software"
+      },
+      correctAnswer: "d"
+    },
+    {
+      question: "6. Why should you avoid connecting to unsecured Wi-Fi networks?",
+      answers: {
+        a: "To save battery life",
+        b: "To prevent automatic updates",
+        c: "To avoid the risk of data interception",
+        d: "To increase device performance"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "7. What is the purpose of mobile security apps?",
+      answers: {
+        a: "To slow down the device",
+        b: "To increase vulnerability to malware",
+        c: "To provide additional protection against threats",
+        d: "To display more advertisements"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "8. How can you minimize the risk of downloading malicious apps?",
+      answers: {
+        a: "Downloading apps from official app stores only",
+        b: "Clicking on ads that promote apps",
+        c: "Sharing your device with others",
+        d: "Disabling automatic updates"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "9. Why is it important to backup your data regularly?",
+      answers: {
+        a: "To increase the risk of data loss",
+        b: "To prevent unauthorized access to data",
+        c: "To save device storage space",
+        d: "To decrease device performance"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "10. What should you do if your mobile device is lost or stolen?",
+      answers: {
+        a: "Do nothing and hope it gets returned",
+        b: "Enable remote wipe and tracking features",
+        c: "Share your device's location on social media",
+        d: "Disable device encryption"
+      },
+      correctAnswer: "b"
+    }
+  ];
+
+  function buildQuiz() {
+    const output = [];
+
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      const answers = [];
+
+      for (letter in currentQuestion.answers) {
+        answers.push(
+          `<label>
+            <input type="radio" name="question${questionNumber}" value="${letter}">
+            ${letter}: ${currentQuestion.answers[letter]}
+          </label>`
+        );
+      }
+
+      output.push(
+        `<div class="question"> ${currentQuestion.question} </div>
+        <div class="answers"> ${answers.join('')} </div>`
+      );
+    });
+
+    quizContainer.innerHTML = output.join('');
+  }
+
+  function showResults() {
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+    let numCorrect = 0;
+
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      if (userAnswer === currentQuestion.correctAnswer) {
+        numCorrect++;
+        answerContainers[questionNumber].querySelector(`input[value='${userAnswer}']`).parentElement.style.color = 'green'; // Highlight correct answer in green
+      } else {
+        answerContainers[questionNumber].querySelector(`input[value='${userAnswer}']`).parentElement.style.color = 'red'; // Highlight incorrect answer in red
+        answerContainers[questionNumber].querySelector(`input[value='${currentQuestion.correctAnswer}']`).parentElement.style.color = 'green'; // Highlight correct answer in green
+      }
+    });
+
+    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length} correct`;
+  }
+
+  buildQuiz();
+
+  submitButton.addEventListener('click', showResults);
+</script>
+
+</body>
+</html>
+
+{% endblock %}

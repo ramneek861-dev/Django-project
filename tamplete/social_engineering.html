@@ -1,0 +1,310 @@
+{% extends 'sidebar.html'%}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social Engineering Awareness</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Custom CSS -->
+
+  <style>
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .card {
+    max-width: 800px; /* Increased card width */
+  }
+
+  .question {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .answers label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    font-size: 14px; /* Decreased button font size */
+  }
+
+  .btn-info:hover {
+    background-color: #138496;
+    border-color: #138496;
+  }
+
+  #results {
+    font-weight: bold;
+  }
+  body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1 class="text-center" style="color:#3ee4ed;">Social Engineering Awareness</h1>
+      <div class="video-container">
+        <!-- Replace the video URL below with the URL of your video tutorial -->
+         <iframe width="560" height="315" src="{%static 'vedio/Social.mp4' %}" type="video/mp4" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <h5>Learn about social engineering tactics and best practices by watching the video tutorial above.</h5>
+    </div>
+    <center>
+      <p class="lead text-info">In addition to the video, here are some tips to enhance your awareness of social engineering:</p></center>
+      <ul>
+        <li class="text-secondary">Be cautious of unsolicited emails or phone calls asking for personal information.</li>
+        <li class="text-secondary">Verify the identity of individuals or organizations requesting sensitive information before sharing it.</li>
+        <li class="text-secondary">Be skeptical of urgent or alarming messages that create a sense of urgency.</li>
+        <li class="text-secondary">Educate yourself and your employees or family members about common social engineering tactics.</li>
+        <li class="text-secondary">Report any suspicious activity or attempts at social engineering to the appropriate authorities.</li>
+      </ul>
+      <h6 class="text-center">By staying vigilant and informed, you can better protect yourself against social engineering attacks!</h6>
+
+      <hr>
+
+      <h2 class="text-center text-info">Additional Tips for Social Engineering Awareness</h2>
+      <h6>Here are some additional tips to further strengthen your awareness of social engineering:</h6>
+      <ul>
+        <li class="text-secondary">Regularly update your knowledge about emerging social engineering tactics and trends.</li>
+        <li class="text-secondary">Implement security protocols and procedures to verify the identity of individuals requesting access to sensitive information or resources.</li>
+        <li class="text-secondary">Conduct regular security awareness training sessions for employees or family members to reinforce best practices.</li>
+        <li class="text-secondary">Monitor and analyze suspicious activities or attempts at social engineering to identify patterns and improve defenses.</li>
+        <li class="text-secondary">Collaborate with cybersecurity experts or organizations to stay informed about the latest threats and countermeasures.</li>
+      </ul>
+
+      <h6>By incorporating these additional measures into your security strategy, you can better defend against social engineering attacks and protect your assets.</h6>
+    </div>
+  </div>
+  <br>
+  <!-- Blog-like information section start below  -->
+  <div class="container">
+    <div class="card-container">
+      <div class="card shadow border-info p-4" style="max-width: 800px;"> <!-- Increase card width -->
+        <h2 class="text-info">Understanding Social Engineering Awareness</h2>
+        <p>Social engineering awareness is crucial for recognizing and mitigating the risks associated with social engineering attacks. Here are some key concepts to understand:</p>
+        <ol>
+          <li><strong>Social Engineering Tactics:</strong> These are techniques used by attackers to manipulate individuals into divulging confidential information or performing actions that compromise security.</li>
+          <li><strong>Phishing:</strong> This is a common social engineering tactic involving fraudulent emails, messages, or websites designed to trick recipients into revealing sensitive information or downloading malicious content.</li>
+          <li><strong>Pretexting:</strong> In this tactic, attackers create a fabricated scenario or pretext to gain the trust of their targets and extract valuable information.</li>
+          <li><strong>Impersonation:</strong> Attackers may impersonate legitimate individuals or organizations to deceive their targets and manipulate them into taking desired actions.</li>
+          <li><strong>Physical Security:</strong> Social engineering attacks are not limited to digital channels and may also exploit weaknesses in physical security measures to gain unauthorized access to facilities or information.</li>
+        </ol>
+        <p>By understanding these concepts and remaining vigilant, individuals and organizations can better defend against social engineering threats.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Blog-like information section end above -->
+  <br>
+  <br>
+
+  <!-- Quiz Section start below  -->
+  <div class="container">
+    <div class="card-container">
+      <div class="card shadow border-info p-4" style="max-width: 800px;">
+        <center><h2 class="text-info">Test Your Knowledge</h2></center>
+        <p class="lead text-center">Take the quiz below to test your understanding of social engineering awareness:</p>
+        <div id="quiz"></div>
+        <button id="submitBtn" class="btn btn-info text-light rounded-pill mt-4 px-4 py-2">Submit</button>
+        <div id="results" class="mt-4"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Quiz Section end above -->
+
+  <script>
+    const quizContainer = document.getElementById('quiz');
+    const resultsContainer = document.getElementById('results');
+    const submitButton = document.getElementById('submitBtn');
+
+    const myQuestions = [
+      {
+        question: "1. What is social engineering?",
+        answers: {
+          a: "A type of computer virus",
+          b: "A technique used by attackers to manipulate individuals into revealing confidential information",
+          c: "A method of encrypting data",
+          d: "A form of biometric authentication"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "2. What is phishing?",
+        answers: {
+          a: "A fishing technique",
+          b: "A social engineering tactic involving fraudulent emails, messages, or websites",
+          c: "A type of physical security measure",
+          d: "A method of generating strong passwords"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "3. How can individuals enhance their awareness of social engineering?",
+        answers: {
+          a: "By ignoring suspicious emails and messages",
+          b: "By regularly updating their antivirus software",
+          c: "By educating themselves about common social engineering tactics and staying vigilant",
+          d: "By sharing sensitive information with unknown individuals"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "4. What is pretexting?",
+        answers: {
+          a: "A type of physical security breach",
+          b: "A method of generating strong passwords",
+          c: "A social engineering tactic involving the creation of a fabricated scenario to gain trust",
+          d: "A form of encryption"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "5. Why is physical security important in the context of social engineering?",
+        answers: {
+          a: "To prevent unauthorized access to facilities or information",
+          b: "To protect against computer viruses",
+          c: "To secure wireless networks",
+          d: "To encrypt data during transmission"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "6. What is tailgating?",
+        answers: {
+          a: "A type of physical security attack involving unauthorized access to a secure area by following closely behind an authorized person",
+          b: "A method of hacking into computer systems using a fake identity",
+          c: "A form of phishing attack targeting social media users",
+          d: "A technique for creating strong passwords"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "7. What is shoulder surfing?",
+        answers: {
+          a: "A type of phishing attack",
+          b: "A physical security breach involving unauthorized access to confidential information by looking over someone's shoulder",
+          c: "A method of bypassing biometric authentication systems",
+          d: "A form of social media engineering"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "8. What is the main goal of social engineering attacks?",
+        answers: {
+          a: "To install malware on target systems",
+          b: "To gain unauthorized access to sensitive information",
+          c: "To encrypt data during transmission",
+          d: "To prevent users from accessing their accounts"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "9. What is the first line of defense against social engineering attacks?",
+        answers: {
+          a: "Firewalls",
+          b: "Antivirus software",
+          c: "Employee awareness and training",
+          d: "Encryption"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "10. What is the purpose of social engineering awareness training?",
+        answers: {
+          a: "To detect and remove malware from infected systems",
+          b: "To educate individuals about common social engineering tactics and how to recognize and respond to them",
+          c: "To implement strong password policies",
+          d: "To encrypt data during transmission"
+        },
+        correctAnswer: "b"
+      }
+    ];
+
+    function buildQuiz() {
+      // variable to store the HTML output
+      const output = [];
+
+      // for each question...
+      myQuestions.forEach((currentQuestion, questionNumber) => {
+        // variable to store the list of possible answers
+        const answers = [];
+
+        // and for each available answer...
+        for (letter in currentQuestion.answers) {
+          // ...add an HTML radio button
+          answers.push(
+            `<label>
+              <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter}: ${currentQuestion.answers[letter]}
+            </label>`
+          );
+        }
+
+        // add this question and its answers to the output
+        output.push(
+          `<div class="question">${currentQuestion.question}</div>
+          <div class="answers">${answers.join('')}</div>`
+        );
+      });
+
+      // finally, combine our output list into one string of HTML and put it on the page
+      quizContainer.innerHTML = output.join('');
+    }
+
+    function showResults() {
+      // gather answer containers from our quiz
+      const answerContainers = quizContainer.querySelectorAll('.answers');
+
+      // keep track of user's answers
+      let numCorrect = 0;
+
+      // for each question...
+      myQuestions.forEach((currentQuestion, questionNumber) => {
+        // find selected answer
+        const answerContainer = answerContainers[questionNumber];
+        const selector = `input[name=question${questionNumber}]:checked`;
+        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+        // if answer is correct
+        if (userAnswer === currentQuestion.correctAnswer) {
+          // add to the number of correct answers
+          numCorrect++;
+
+          // color the answers green
+          answerContainers[questionNumber].style.color = 'lightgreen';
+        } else {
+          // if answer is wrong or blank
+          // color the answers red
+          answerContainers[questionNumber].style.color = 'red';
+        }
+      });
+
+      // show number of correct answers out of total
+      resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+    }
+
+    // display quiz right away
+    buildQuiz();
+
+    // on submit, show results
+    submitButton.addEventListener('click', showResults);
+  </script>
+
+
+    
+</body>
+</html>
+
+{% endblock %}

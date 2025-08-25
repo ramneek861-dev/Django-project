@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Tools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{%static 'css/aos.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+/*            background-color: #f2f2f2;*/
+            color: #333;
+        }
+
+        .tool-container {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tool-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .tool-container img {
+            display: block;
+            margin: 0 auto 15px;
+        }
+
+        .tool-description {
+            margin-bottom: 20px;
+        }
+
+        .tool-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #3ee4ed;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .tool-link:hover {
+            color:cadetblue;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #007bff;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h2 align="center" class="display-3"><b> <font style="color:#3ee4ed ">  <div data-aos="fade-down">Security tools</div></font></b></h2>
+    <p>Explore the best cybersecurity tools to protect your digital world.</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <!-- Malwarebytes -->
+        <div class="col-md-4">
+            <div class="card shadow tool-container" data-aos="flip-left">
+                <br>
+                <img src="{% static 'images/mal.png' %}" alt="Malwarebytes Logo" height="50">
+                <div class="tool-description">
+                 <h5> <font style="color:#006bb3;">Malwarebytes</font>  is a trusted cybersecurity company providing anti-malware and anti-exploit software solutions. It defends against various cyber threats, ensuring the security and privacy of users' digital environments.With advanced features and real-time scanning,  ensuring your devices remain secure and your data protected</h5>
+                </div>
+                <a href="https://www.malwarebytes.com/mwb-download/" class="tool-link"><i class="fas fa-download"></i> Download Malwarebytes</a>
+            </div>
+        </div>
+
+        <!-- Avast Free Antivirus -->
+        <div class="col-md-4">
+            <div class="card shadow tool-container" data-aos="flip-left">
+                <img src="{% static 'images/aw.png' %}" alt="Avast Logo" height="95">
+                <div class="tool-description">
+                    <h5><font style="color:orange;">Avast</font> is a widely recognized antivirus software provider offering robust protection against various cyber threats. Its comprehensive features includes web protection, real-time scanning, email filtering, and advanced firewall capabilities, ensuring defense against malware, ransomware and other online dangers.</h5>
+                </div>
+                <a href="https://www.avast.com/en-us/free-antivirus-download" class="tool-link"><i class="fas fa-download"></i> Download Avast  Antivirus Free Editor </a>
+            </div>
+        </div>
+
+        <!-- Bitdefender Antivirus Free Edition -->
+        <div class="col-md-4">
+            <div class="card shadow tool-container" data-aos="flip-left">
+                <img src="{% static 'images/bitd.png' %}" alt="Bitdefender Logo" height="105" width="195"><br>
+                <div class="tool-description">
+                    <h5><font style="color: #ff0000;">Bitdefender</font> offers top-tier antivirus protection,  safeguarding device against malware, ransomware, and other online threats. Its free antivirus edition provides essential security features for basic protection, ensuring peace of mind for users.</h5>
+                </div>
+                <a href="https://www.bitdefender.com/solutions/free.html" class="tool-link"><i class="fas fa-download"></i> Download Bitdefender Antivirus Free Edition</a>
+            </div>
+        </div>
+
+        <!-- AdwCleaner -->
+        <div class="col-md-4">
+            <div class="card shadow tool-container" data-aos="flip-left">
+                <img src="{% static 'images/logo.png' %}" alt="AdwCleaner Logo" height="90">
+                <div class="tool-description">
+                     <h5> <font style="color:blue;">Adw</font><font style="color:#33cc33;">Cleaner</font> specializes in removing adware, unwanted toolbars, and potentially unwanted programs (PUPs) from your system efficiently. It's a free tool developed by Malwarebytes, enhancing your computer's security and performance.</h5>
+                </div>
+                <a href="https://www.malwarebytes.com/adwcleaner/" class="tool-link"><i class="fas fa-download"></i> Download AdwCleaner</a>
+            </div>
+        </div>
+
+        <!-- HitmanPro -->
+        <div class="col-md-4">
+            <div class="card shadow tool-container" data-aos="flip-left">
+                <br>
+                <img src="{% static 'images/hit.webp' %}" alt="HitmanPro Logo" height="70">
+                <div class="tool-description">
+                    <h5> <font style="color:orange;">Hit</font><font style="color:#006bb3;">man</font><font style="color:#009933;">Pro</font>  is an advanced malware removal tool employing behavioral analysis and cloud scanning to detect and remove malware effectively. It targets various threats, including bots and persistent infections, ensuring comprehensive protection.</h5>
+                </div>
+                <a href="https://www.hitmanpro.com/en-us/hmp.aspx" class="tool-link"><i class="fas fa-download"></i> Download HitmanPro</a>
+            </div>
+        </div>
+
+        <!-- CIS -->
+        <div class="col-md-4">
+            <div class="card shadow tool-container" data-aos="flip-left">
+                <img src="{% static 'images/center.png' %}" alt="CIS Logo" height="70">
+                <div class="tool-description">
+                    <h5> <font style="color: #0073e6;">CIS</font> (Center for Internet Security) is a nonprofit organization that provides cybersecurity best practices, tools, and resources to help organizations improve their security posture. CIS offers various cybersecurity benchmarks, guides, and tools for securing systems and networks.</h5>
+                </div>
+                <a href="https://www.cisecurity.org/" class="tool-link"><i class="fas fa-download"></i> Download CIS</a>
+            </div>
+        </div>
+
+        <!-- Snort -->
+        <div class="col-md-4">
+            <div class="card shadow tool-container" data-aos="flip-left">
+                <img src="{% static 'images/sn.png' %}" alt="Snort Logo" height="85" width="240">
+                <div class="tool-description">
+                    <h5> <font style="color:#ffcc00;">Snort</font> is an open-source network intrusion detection system (NIDS) and intrusion prevention system (IPS). It analyzes network traffic in real-time to detect and prevent various types of attacks, including malware infections, denial-of-service (DoS) attacks, and port scans.</h5>
+                </div>
+                <a href="https://www.snort.org/downloads" class="tool-link"><i class="fas fa-download"></i> Download Snort</a>
+            </div>
+        </div>
+
+        <!-- GnuPG -->
+        <div class="col-md-4">
+            <div class="card shadow tool-container" data-aos="flip-left">
+                <img src="{% static 'images/gnu.png' %}" alt="GnuPG Logo" height="85" width="240">
+                <div class="tool-description">
+                   <h5> <font style="color:#0099ff;">GnuPG</font> (GNU Privacy Guard) is a free and open-source encryption software that provides cryptographic privacy  for data communication. It supports various encryption algorithms and is commonly used for securing email communication, and digital signatures.</h5>
+                </div>
+                <a href="https://gnupg.org/download/index.html" class="tool-link"><i class="fas fa-download"></i> Download GnuPG</a>
+            </div>
+        </div>
+
+        <!-- Webroot -->
+        <div class="col-md-4">
+            <div class="card shadow tool-container" data-aos="flip-left">
+                <br>
+                <img src="{% static 'images/web.png' %}" alt="Webroot Logo" height="60" width="290">
+                <div class="tool-description">
+                    <br>
+                    <h5> <font style="color:#00cc00;">Webroot</font> delivers cloud-based endpoint protection, antivirus, and threat intelligence solutions for comprehensive security. Its real-time protection defends against malware, ransomware, and other online threats, safeguarding users' digital lives.</h5>
+                </div>
+                <a href="https://www.webroot.com/" class="tool-link"><i class="fas fa-download"></i> Download Webroot</a>
+            </div>
+        </div>
+
+        <!-- Wireshark -->
+        <div class="col-md-4">
+            <div class="card shadow tool-container" data-aos="flip-left">
+                <img src="{% static 'images/wire.png' %}" alt="Wireshark Logo" height="60" width="290">
+                <div class="tool-description">
+                    <h5> <font style="color:#008ae6;">Wire</font><font style="color:#80aaff;">shark</font>is a popular network protocol analyzer that allows users to capture and analyze network traffic in real-time. It is commonly used for troubleshooting network issues, analyzing network protocols, and detecting network intrusions.</h5>
+                </div>
+                <a href="https://www.wireshark.org/download.html" class="tool-link"><i class="fas fa-download"></i> Download Wireshark</a>
+            </div>
+        </div>
+       
+        <!-- Add more tools here -->
+    </div>
+</div>
+<!-- animation satrt below -->
+<script src="{%static 'js/aos.js' %}"> </script>
+  <script>
+    AOS.init()
+  </script>
+</body>
+</html>
+
+{% endblock %}

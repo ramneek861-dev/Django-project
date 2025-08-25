@@ -1,0 +1,142 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+      <style>
+        /* Define a class to apply animated border color */
+        .animated-border {
+            border: 3px solid  #00cccc ; /* Set initial border color (blue in this example) */
+            padding: 10px; /* Optional: Add padding for better appearance */
+            width: 370px; /* Optional: Set width for demonstration */
+            animation: animateBorder 1s infinite alternate; /* Apply animation to the border */
+        }
+
+        /* Define the animation */
+        @keyframes animateBorder {
+            0% {
+                border-color: #0000cc; /* Start with blue */
+            }
+            100% {
+                border-color: #3ee4ed; /* End with red */
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+<div class="col-6">
+
+
+
+
+
+
+
+<br><br><BR>
+<h2 class="display-5 text-info"><b><img id="myImage" src="https://html.designingmedia.com/whizcyber/assets/images/section2-list-img.png" alt="My Image">DOMIAN<br>&nbsp;&nbsp; REPORT</b></h2>
+<br>
+<p><b>Welcome to our Intelliguard Cyber Domain Report service, dedicated to enhancing the security of your online presence. Our scanning process meticulously examines various aspects of your domain, much like inspecting different parts of a property. For instance, we scrutinize domain registration details, DNS configurations, SSL/TLS certificate status, and potential blacklistings. By identifying any vulnerabilities or threats, we empower you to fortify your domain's defenses against cyber attacks. Stay proactive and secure with our Intelliguard Cyber Domain Report service.</p></b>
+</div>
+
+
+    <div class="col-5 mb-3">
+        <br><br>
+        
+         
+        <div class="card shadow animated-border">
+
+            <div class="card-body"><center><img src="https://cdn3d.iconscout.com/3d/premium/thumb/domain-7362207-6020416.png" width="90%" height="70%"></img></center>
+                <br>
+<form action="" method="POST">
+    {% csrf_token %}
+            
+            <label><b>Enter DOMAIN</b></label>
+            <input type="text"  name="domain" placeholder="www.example.com" class="form-control rounded-pill shadow"><br/></div>
+            <div class="form-btn" align="center">
+               <button type="submit" class="btn btn-info btn-lg w-40 mb-3-10px rounded-pill">Scan</button>
+               <br><br><br>
+               </div>
+            
+        </div>
+    </form>
+    <br><br>
+</div>
+<hr>
+<br><br>
+
+
+<div class="col-5">
+    <img src={%static "images/ww.webp" %} height="80%" width="90%"></img>
+    <br><br><br><br><br>
+
+</div>
+
+<div class="col-6">
+    <h2 class="display-5 text-info">How Does<br> Domain Report Work?</h2>
+<p><b>Domain report scanning involves analyzing various aspects of a domain name to evaluate its security status and potential risks. This process is typically conducted by cybersecurity tools or services aimed at identifying vulnerabilities and safeguarding against potential threats. Here's a breakdown of how domain report scanning functions within the framework of Intelliguard Cyber:</b></p>
+    
+
+  
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="col-1"></div>
+<br>
+
+<div class="row">
+<div class="col-3"></div>
+    
+    <div class="col-5">
+ <div class="card shadow animated-border">
+    <center><h3>Identification</h3></center> 
+ <p>In the first step the domain name to be scanned is identified, which could include a website URL(Uniform Resourse Locator), email domain, or network domain.</p></div>
+
+ <br>
+ <br>
+
+
+<div class="card shadow animated-border">
+ <center><h3>Data Collection</h3></center> 
+<p> Information about the domain is gathered from multiple sources, such as domain registration records, DNS information, website content, and security databases.</p>
+ </div></div>
+
+<div class="col-4">
+    <div class="card shadow animated-border">
+    <center><h3>Analysis</h3></center>
+     <p> The collected data undergoes thorough analysis to detect any security weaknesses,or signs of malicious activity associated with the domain.</p></div>
+<br><br>
+
+<div class="card shadow animated-border">
+    <center><h3>Reporting</h3></center>
+     <p>The domain report includes ownership, DNS, SSL/TLS  certificates status, and security recommendations for enhanced domain protection.</p></div>
+</div>
+</div>
+<br>
+<br>
+<div class="row justify-content-center">
+    <div class="col-5"></div>
+    <div class="col-6 text-center">
+        <div class="card shadow animated-border">
+            <h3>Actionable Insights</h3>
+            <p> Based on the analysis,  and recommendations are provided to domain owners to address identified security issues and strengthen the overall security posture of their domains.</p>
+        </div>
+    </div>
+</div>  
+
+
+
+
+
+
+    </body>
+</html>
+
+
+    
+{% endblock %}

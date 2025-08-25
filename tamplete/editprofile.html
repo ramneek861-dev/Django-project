@@ -1,0 +1,130 @@
+
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>edit profile</title>
+    <link rel="stylesheet" href="{%static 'css/aos.css' %}">
+</head>
+
+<body>
+	<br><br>
+	<div class="row">
+
+		<center><h1 class="display-1 text-info">Edit Profile</h1></center>
+
+    <div class="col-4 mb-3">
+    	<br><br><br>
+        <div class="card shadow border-info">
+            <div class="card-body">
+                <div class=" align-items-center text-center">
+                    {% if msg == "success" %}
+                    <img id="profileImage" src="{{ user.Image.url}}" style="width:250px; height: 250px; border-radius:70%;" >
+                    {% elif user.Image %}
+                    <img id="profileImage" src="{{ user.Image.url}}" style="width:250px; height: 250px; border-radius:70%;">
+                    {% else %}
+                    <img id="profileImage" src="https://i.pinimg.com/736x/59/a5/38/59a5383ee25bddf76a3fc15a3ad16c04.jpg" class="rounded-circle" width="210">
+                    {% endif %}
+                    <br>
+
+                    <label for="imageUpload" class="btn btn-lg btn-info border-info text-light rounded-circle">
+                        <i class="fas fa-camera "></i> 
+                    </label>
+                    <input id="imageUpload" type="file" name="file" style="display: none;" onchange="previewImage(event)">
+                    
+                    <div class="mt-3">
+                        <h4>Kim Tae</h4>
+                        <p class="text-secondary mb-1" >Full Stack Developer</p>
+                        <p class="font-size-sm">Frankfurt am main</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="col-7">
+<form action=""  method="POST">
+{% csrf_token %}
+<!-- below main row start that i add -->
+<div class="row">
+<div class="col-md-11">
+	
+
+<div class="row">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<br><br><br>
+<div class="form-group">
+<div data-aos="fade-up"><label class="profile_details_text"><b>Name:</b></label>
+<input type="text" name="name" class="form-control bg-light rounded-pill shadow border-info" value="{{user.Name}}" required ></div>
+</div>
+</div>
+<br>
+</div>
+<br>
+<div class="row">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="form-group">
+<div data-aos="fade-up"><label class="profile_details_text"><b>Email Address:</b></label>
+<input type="email" name="email" class="form-control  bg-light rounded-pill shadow border-info" value="{{user.Email}}" required></div>
+</div>
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="form-group">
+<div data-aos="fade-up"><label class="profile_details_text"><b>Mobile Number:</b></label>
+<input type="tel" name="MobileNumber" class="form-control bg-light rounded-pill shadow border-info" value="{{user.MobileNumber}}" required pattern=[0-9]{10}></div>
+</div>
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="form-group">
+<div data-aos="fade-up"><label class="profile_details_text"><b>Date Of Birth:</b></label>
+<input type="date" name="DateOfBirth" class="form-control  bg-light rounded-pill shadow border-info" value="{{user.DateOfBirth}}" required></div>
+</div>
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="form-group ">
+<div data-aos="fade-up"><label class="profile_details_text"><b>Gender:</b></label>
+<select name="gender" class="form-control bg-light rounded-pill shadow border-info " value="{{user.gender}}" required>
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+<option value="others">others</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div data-aos="flip-left"><center><input type="submit" class="btn btn-info btn-lg w-40 mb-3-10px rounded-pill text-white" value="Submit"></center></div>
+</div>
+<br>
+</form>
+</div>
+<!-- below div end of row-11  -->
+</div>
+<div class="col-md-1"></div>
+
+<!-- below is the main div end that i add -->
+</div>
+<br>
+<br>
+<br>
+<br>
+<!-- animation satrt below -->
+<script src="{%static 'js/aos.js' %}"> </script>
+  <script>
+    AOS.init()
+  </script>
+</body>
+</html>
+{% endblock %}

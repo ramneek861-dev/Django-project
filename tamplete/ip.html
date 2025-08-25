@@ -1,0 +1,135 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{%static 'css/aos.css' %}">
+	<title></title>
+	  <style>
+        /* Define a class to apply animated border color */
+        .animated-border {
+            border: 3px solid  #00cccc ; /* Set initial border color (blue in this example) */
+            padding: 10px; /* Optional: Add padding for better appearance */
+            width: 370px; /* Optional: Set width for demonstration */
+            animation: animateBorder 1s infinite alternate; /* Apply animation to the border */
+        }
+
+        /* Define the animation */
+        @keyframes animateBorder {
+            0% {
+                border-color: #0000cc; /* Start with blue */
+            }
+            100% {
+                border-color: #3ee4ed; /* End with red */
+            }
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+<div class="row">
+<div class="col-6">
+
+<br><br><BR>
+<h2 class="display-5 text-info"><b><img id="myImage" src="https://html.designingmedia.com/whizcyber/assets/images/section2-list-img.png" alt="My Image"> IP ADDRESS<br>&nbsp;&nbsp; SCANNING</b></h2>
+<br>
+<p><b>Welcome to our Intelliguard Cyber IP Scanning page, where we Think of IP address scanning like a detective work for computers. It helps cybersecurity experts figure out what devices are connected to a network and whether they're safe or risky. By checking IP addresses one by one, they can find out which computers are active and what services they're running. This helps them spot any potential weak spots that hackers might use to break in. But, it's important to do this carefully and responsibly, following rules to avoid accidentally causing problems for the network.
+</p></b>
+</div>
+
+
+    <div class="col-5 mb-3">
+    	<br><br>
+    	
+         
+        <div class="card shadow animated-border">
+
+            <div class="card-body"><center><img src={%static "images/ipimg3.png" %} width="100%" height="100%"></img></center>
+            	<br>
+<form action="" method="POST">
+			{% csrf_token %}
+			<label><b>Enter IP</b></label>
+			<input type="text" name="ip" placeholder=" " class="form-control rounded-pill shadow"><br/></div>
+			<div class="form-btn" align="center">
+               <button type="submit" class="btn btn-info btn-lg w-40 mb-3-10px rounded-pill">Scan</button>
+               <br><br><br>
+           </div>
+		</div>
+	</form>
+<br><br>
+</div>
+
+
+<hr>
+<br><br>
+
+
+<div class="col-5">
+    <img src={%static "images/ipimg2.png" %} height="90%" width="90%"></img>
+    <br><br><br><br><br>
+
+</div>
+
+<div class="col-6">
+    <h2 class="display-5 text-info">How Does<br> IP Scanner Work?</h2>
+<p><b>In cybersecurity, an IP (Internet Protocol) address is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication. IP addresses serve two main purposes: identifying the host or network interface and providing the location of the device in a network.Here's an overview of how URL scanning works in the context of Intelliguard cyber:</b></p>
+    
+
+  
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="col-1"></div>
+<br>
+
+<div class="row">
+<div class="col-3"></div>
+    
+    <div class="col-5">
+ <div class="card shadow animated-border">
+    <center><h3>Identification</h3></center> 
+ IP addresses are like unique identifiers for devices connected to a network. They help in identifying the source and destination of data packets in a network. This is crucial for cybersecurity as it allows security systems to track and monitor network traffic.</div>
+
+ <br>
+ <br>
+
+
+<div class="card shadow animated-border">
+ <center><h3>Logging and Monitoring</h3></center> 
+<p>Security devices such as intrusion detection systems (IDS) and intrusion prevention systems (IPS) use IP addresses to log and monitor network traffic. By analyzing IP addresses and associated metadata.</p>
+ </div></div>
+
+<div class="col-4">
+    <div class="card shadow animated-border">
+    <center><h3>Access Control</h3></center>
+      IP addresses are often used in access control mechanisms. They're essential in access control mechanisms like firewalls, enabling the filtering of traffic based on source or destination IP addresses to prevent unauthorized access and potential security breaches.
+</div>
+<br><br>
+
+<div class="card shadow animated-border">
+    <center><h3>Threat Intelligence</h3></center>
+     <p> IP addresses are a key component of threat intelligence feeds. Security professionals use threat intelligence to stay updated about known malicious IP addresses, domains, or other indicators of compromise (IOCs).</p></div>
+</div>
+</div>
+<br>
+<br>
+<div class="row justify-content-center">
+    <div class="col-5"></div>
+    <div class="col-6 text-center">
+        <div class="card shadow animated-border">
+            <h3>Forensics and Incident Response</h3>
+            <p> During security incidents, analyzing IP addresses involved can provide valuable insights for forensics and incident response, aiding in tracing the origin of attacks and understanding the methods used by attackers.</p>
+        </div>
+    </div>
+</div> 
+<br>
+<br> 
+
+{% endblock%}

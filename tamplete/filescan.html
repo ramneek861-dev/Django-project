@@ -1,0 +1,153 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	  <style>
+        /* Define a class to apply animated border color */
+        .animated-border {
+            border: 3px solid  #00cccc ; /* Set initial border color (blue in this example) */
+            padding: 10px; /* Optional: Add padding for better appearance */
+            width: 370px; /* Optional: Set width for demonstration */
+            animation: animateBorder 1s infinite alternate; /* Apply animation to the border */
+        }
+
+        /* Define the animation */
+        @keyframes animateBorder {
+            0% {
+                border-color: #0000cc; /* Start with blue */
+            }
+            100% {
+                border-color: #3ee4ed; /* End with red */
+            }
+        }
+        .btn {
+    border-radius: 0; /* Removes border radius to create a rectangle shape */
+}
+
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+<div class="row">
+<div class="col-6">
+
+<br><br><BR>
+<h2 class="display-5 text-info"><b><img id="myImage" src="https://html.designingmedia.com/whizcyber/assets/images/section2-list-img.png" alt="My Image"> FILE<br>&nbsp;&nbsp; SCANNING</b></h2>
+<br>
+<p><b>Welcome to our Intelliguard Cyber file Scanning page. file scanning plays a pivotal role in safeguarding digital environments against malicious threats. Through sophisticated algorithms and extensive databases of known malware signatures, these scanners meticulously inspect files, URLs, and attachments to detect any indicators of compromise. By leveraging machine learning, behavior analysis, and heuristic detection techniques, they identify and mitigate a broad spectrum of threats, ranging from viruses and ransomware to Trojans and spyware. </p></b>
+</div>
+
+
+    <div class="col-5 mb-3">
+    	<br><br>
+    	
+         
+        <div class="card shadow animated-border">
+
+            <div class="card-body"><center><img src={%static "images/file.png" %} width="100%" height="100%"></img></center>
+            	<br><br>
+
+<form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div style="display: inline;">
+                <label for="fileUpload" class="btn btn-lg btn-info border-info text-light rounded-pill">
+                    Upload File
+                </label>
+                <input id="fileUpload" type="file" name="file" style="display: none;" onchange="previewImage(event)">
+            </div>
+            <button type="submit" class="btn btn-lg btn-white text-info border-info rounded-pill">Submit</button>
+        </center>
+        <br><br><br>
+    </div>
+        </div>
+	</form>
+<br><br>
+</div>
+
+<hr>
+<br><br>
+
+
+<div class="col-5">
+	<img src={%static "images/foot2.png" %} height="70%" width="80%"></img>
+	<br><br><br><br><br>
+
+</div>
+
+<div class="col-6">
+	<h2 class="display-5 text-info">How Does<br> File Scanner Work?</h2>
+<p><b>A file scanner in the context of cybersecurity operates by meticulously examining the contents of files to discern and pinpoint possible security threats or malicious content.Through a combination of signature-based detection, heuristic analysis, and behavioral monitoring, file scanners meticulously evaluate each file to assess its integrity and potential risk level. This comprehensive approach enables them to identify a wide range of threats, including viruses, trojans, ransomware, and other forms of malware, thereby enhancing the overall security posture of digital environments.</b></p>
+	
+
+  
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="col-1"></div>
+<br>
+
+<div class="row">
+<div class="col-3"></div>
+	
+	<div class="col-5">
+ <div class="card shadow animated-border">
+ 	<center><h3>1.File Submission</h3></center> 
+Users submit a wide array of file formats, spanning executables, documents, images, archives, and more, to the file scanner, facilitating comprehensive analysis to detect potential security threats and vulnerabilities.</div>
+
+ <br>
+ <br>
+
+
+<div class="card shadow animated-border">
+ <center><h3>4.Pattern Detection</h3></center> 
+<p>Upon file reception, the scanner preprocesses, extracting metadata, validating formats, and meticulously preparing for comprehensive analysis to detect potential security threats across diverse file types.</p>
+ </div></div>
+
+<div class="col-4">
+	<div class="card shadow animated-border">
+	<center><h3>2.Pre-Processing</h3></center>
+Upon file reception, the scanner preprocesses, extracting metadata, validating formats, and meticulously preparing for comprehensive analysis to detect potential security threats across diverse file types.
+
+
+
+
+
+</div>
+<br><br>
+
+<div class="card shadow animated-border">
+	<center><h3>3.Heuristic Analysis</h3></center>
+	 <p> In addition to signature-based detection, the scanner may employ heuristic analysis techniques to identify suspicious behavior or characteristics that deviate from normal file structures or expected behaviors. </p></div>
+</div>
+</div>
+<br>
+<br>
+<div class="row justify-content-center">
+	<div class="col-5"></div>
+    <div class="col-6 text-center">
+        <div class="card shadow animated-border">
+            <h3>5.Machine Learning</h3>
+            <p>Machine learning algorithms may be employed to analyze file features and classify them as benign or malicious based on learned patterns and characteristics. This can help improve the accuracy and efficiency of the scanner.</p>
+        </div>
+    </div>
+</div>
+<br><br> 
+<hr>	
+
+
+
+</body>
+</html>
+
+
+	
+{% endblock%}

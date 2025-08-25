@@ -1,0 +1,29 @@
+{% extends 'sidebar.html' %}
+
+{% block content %}
+{% load static %}
+<style>
+body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+</style>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="card border-0 shadow-lg rounded-lg">
+                <div class="card-body">
+                    <h1 class="display-4 text-info text-center mb-4">WHOIS Info</h1>
+                    <hr class="my-4">
+                    <div class="row">
+                        <div class="col-12">
+                            {% for info in t %}
+                            <p class="lead">{{ info }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

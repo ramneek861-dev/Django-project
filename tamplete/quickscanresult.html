@@ -1,0 +1,71 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+    /* Custom styles for enhanced appearance */
+    .result-container {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slide-up 0.5s ease-out forwards;
+    }
+
+    @keyframes slide-up {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .list-group-item {
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fade-in 0.5s ease-out forwards;
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .catch-up-message {
+        opacity: 0;
+        animation: fade-in 0.5s ease-out forwards;
+    }
+    body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+</style>
+
+<div class="container">
+    <div class="row p-4 border shadow mt-4">
+        <div class="col-12">
+            <h1 class="display-4 text-info text-center mb-4">IP Information</h1>
+            <hr class="my-4">
+        </div>
+
+        <div class="col-12">
+            <div class="result-container">
+                <ul class="list-group">
+                    {% for item in result %}
+                    <li class="list-group-item">{{ item }}</li>
+                    {% endfor %}
+                </ul>
+                <p class="catch-up-message text-center mt-3">You're all caught up!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

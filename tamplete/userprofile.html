@@ -1,0 +1,111 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+<br><br><br><br>
+
+<div class="row">
+    <div class="col-4 mb-3">
+        <div class="card shadow border-info">
+            <div class="card-body">
+                <div class=" align-items-center text-center">
+                    {% if msg == "success" %}
+                    <img id="profileImage" src="{{ user.Image.url}}" style="width:250px; height: 250px; border-radius:70%;" >
+                    {% elif user.Image %}
+                    <img id="profileImage" src="{{ user.Image.url}}" style="width:250px; height: 250px; border-radius:70%;">
+                    {% else %}
+                    <img id="profileImage" src="https://i.pinimg.com/736x/59/a5/38/59a5383ee25bddf76a3fc15a3ad16c04.jpg" class="rounded-circle" width="210">
+                    {% endif %}
+                    <br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-7">
+        <div class="card mb-3 shadow border-info">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3">
+                        <h6 class="mb-0">Name</h6>
+                    </div>
+                    <div class="col-9 text-secondary">
+                        {{user.Name}}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-3">
+                        <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-9 text-secondary">
+                        {{user.Email}}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">Mobile</h6>
+                    </div>
+                    <div class="col-9 text-secondary">
+                        {{user.MobileNumber}}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-3">
+                        <h6 class="mb-0">DateOfBirth</h6>
+                    </div>
+                    <div class="col-9 text-secondary">
+                        {{user.DateOfBirth}}
+                       
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-3">
+                        <h6 class="mb-0">Gender</h6>
+                    </div>
+                    <div class="col-9 text-secondary">
+                        {{user.Gender}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <center>
+            <button class="btn btn-outline-info" onclick="window.location.href='{% url 'editprofile' %}'">Edit Profile</button>
+
+            <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+    <span class="visually-hidden">New alerts</span>
+  </span>
+</button>
+            <button class="btn btn-info" onclick="window.location.href='/logout'" style="color: white;">Sign out</button>
+
+
+        </center>
+    </div>
+</div>
+<div class="col-1"></div>
+<br>
+<br>
+
+<script>
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            var output = document.getElementById('profileImage');
+            output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+
+    function signout() {
+            // Here you would typically perform logout actions, such as clearing session data or redirecting to a logout page
+            // For the sake of this example, let's simply redirect to a login page
+            window.location.href = "signin.html";
+        }
+</script>
+
+{% endblock%}

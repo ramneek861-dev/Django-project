@@ -1,0 +1,135 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+      <style>
+        /* Define a class to apply animated border color */
+        .animated-border {
+            border: 3px solid  #00cccc ; /* Set initial border color (blue in this example) */
+            padding: 10px; /* Optional: Add padding for better appearance */
+            width: 370px; /* Optional: Set width for demonstration */
+            animation: animateBorder 1s infinite alternate; /* Apply animation to the border */
+        }
+
+        /* Define the animation */
+        @keyframes animateBorder {
+            0% {
+                border-color: #0000cc; /* Start with blue */
+            }
+            100% {
+                border-color: #3ee4ed ; /* End with red */
+            }
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+
+<div class="row">
+<div class="col-6">
+
+<br><br><BR>
+<h2 class="display-5 text-info"><b><img id="myImage" src="https://html.designingmedia.com/whizcyber/assets/images/section2-list-img.png" alt="My Image"> PORT SCANNING <br>WITH END/START<BR>NUMBERS</b></h2>
+<br>
+<p><b>Welcome to our Intelliguard Cyber Port Scanning with starting and ending numbers page, Port scanning involves sending packets to sequential port numbers within a defined range, starting from the specified starting port number and concluding at the ending port number. During this process, responses from the target device or network are analyzed to determine the accessibility and status of each probed port. By systematically exploring the port range, port scanning facilitates network reconnaissance, security assessment, and the identification of potential entry points for attackers.</p></b>
+</div>
+
+    
+    <div class="col-5 mb-3">
+        <br><br><br>
+        <div class="card shadow animated-border">
+
+            <div class="card-body"><center><img src={%static "images/portnum.webp" %} width="90%" height="70%"></img></center>
+                <br><br><br>
+<form action="" method="POST" id="portForm" onsubmit="return validatePortRange()">
+    {% csrf_token %}
+            
+            <label><b>Enter Hostname</b></label>
+            <input type="text" id="startPort" placeholder="" class="form-control rounded-pill shadow"><br/>
+            <label><b>Enter Starting Port</b></label>
+            <input type="text"  id="endPort" placeholder="" class="form-control rounded-pill shadow"><br/>
+            <label><b>Enter Ending Port</b></label>
+            <input type="text" placeholder="" class="form-control rounded-pill shadow"><br/>
+            <div class="form-btn" align="center">
+               <button type="submit" class="btn btn-info btn-lg w-40 mb-3-10px rounded-pill">Scan</button>
+               <br><br><br>
+               </div>
+            
+        </div>
+    </form>
+    
+</div>
+</div>
+<br><hr>
+<div class="row">
+    <div class="col-md-6">
+      <img src={%static "images/lock3.png" %} width="90%">
+    </div>
+    <div class="col-md-6">
+<h2 class="display-5 text-info"><b>How Does<br>Port Scanning Work?</b></h2>
+        <p><b>In simple terms, port scanning is like knocking on doors to see if they're open or closed. In the digital world, it's a way to check if certain entry points (called ports) on a computer or network are accessible. This helps to understand what services or programs are running and if there are any potential vulnerabilities that could be exploited by hackers.</b></p>
+    </div>
+</div>
+</div>
+
+</div>
+
+<div class="col-1"></div>
+<br>
+
+<div class="row">
+<div class="col-3"></div>
+    
+    <div class="col-5">
+ <div class="card shadow animated-border">
+    <center><h3>1.Range Specification</h3></center> 
+ Port scanning tools allow users to specify a range of ports to scan, providing flexibility in targeting specific services or segments of the network. This range typically includes a starting port number and an ending port number. For example, a user might specify ports 1 to 1000 to scan for common services.
+</div>
+
+ <br>
+ <br>
+<div class="card shadow animated-border">
+ <center><h3>2.Iterative Probing</h3></center> 
+<p> Once the range of ports is specified, the port scanning tool iteratively probes each port within the defined range. It starts with the starting port number and sequentially probes each subsequent port up to the ending port number.</p>
+ </div></div>
+
+<div class="col-4">
+    <div class="card shadow animated-border">
+    <center><h3>3.Packet Sending</h3></center>
+    the port scanning tool sends specialized packets to the target device, utilizing sophisticated algorithms and protocols to maximize scanning efficiency and accuracy. These packets are designed to elicit a response from the target's networking stack, indicating whether the port is open, closed, or filtered. </div>
+<br><br>
+
+<div class="card shadow animated-border">
+    <center><h3>4.Response Analysis</h3></center>
+     <p>As responses are received from the target device, the port scanning tool analyzes them to determine the state of each probed port. Open ports indicate active services that are listening for incoming connections.</p></div>
+</div>
+</div>
+</div>
+<br>
+<br>
+<div class="row justify-content-center">
+    <div class="col-5"></div>
+    <div class="col-6 text-center">
+        <div class="card shadow animated-border">
+            <h3>5.Reporting and Visualization</h3>
+            <p> After scanning the specified range of ports, the port scanning tool generates a report summarizing the results. This report typically includes a list of open ports, identified services, and potentially vulnerable systems.</p>
+        </div>
+    </div>
+</div> 
+<br>
+<br>    
+
+
+
+</body>
+</html>
+
+
+    
+{% endblock%}

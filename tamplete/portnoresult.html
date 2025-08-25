@@ -1,0 +1,23 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <div class="row p-4 border shadow mt-4">
+        <div class="col-12">
+            <h5 class="display-3 text-info text-center">IPNo Information</h5>
+            <hr>
+        </div>
+
+        <div class="col-12">
+            <ul>
+                {% for i in result %}
+                <br>
+                <li>{{i}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

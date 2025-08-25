@@ -1,0 +1,209 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	  <style>
+        /* Define a class to apply animated border color */
+        .animated-border {
+            border: 3px solid  #00cccc ; /* Set initial border color (blue in this example) */
+            padding: 10px; /* Optional: Add padding for better appearance */
+            width: 370px; /* Optional: Set width for demonstration */
+            animation: animateBorder 1s infinite alternate; /* Apply animation to the border */
+        }
+
+        /* Define the animation */
+        @keyframes animateBorder {
+            0% {
+                border-color: #0000cc; /* Start with blue */
+            }
+            100% {
+                border-color: #3ee4ed; /* End with red */
+            }
+        }
+        body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .loading-spinner-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+        z-index: 9999;
+    }
+
+    .loading-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        border: 2px solid #3498db; /* Blue border */
+        border-top: 2px solid #8A2BE2; /* Yellow border on top for spinner effect */
+        border-radius: 50%;
+        animation: spin 1s linear infinite; /* Animation for spinning effect */
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+<div class="row">
+<div class="col-6">
+
+<br><br><BR>
+<h2 class="display-5 text-info"><b><img id="myImage" src="https://html.designingmedia.com/whizcyber/assets/images/section2-list-img.png" alt="My Image"> WHOIS<br>&nbsp;&nbsp; SCANNING</b></h2>
+<br>
+<p><b>Welcome to our Intelliguard Cyber WHOIS page,WHOIS is a widely-used internet protocol used to query databases containing registration details of domain names, IP addresses, and autonomous system numbers. It provides information about the entities responsible for domain name registrations or IP allocations, including their contact details, registration dates, and administrative statuses. WHOIS queries can be performed through various online tools or command-line interfaces to retrieve essential information about internet resources and their owners or administrators.
+</p></b>
+</div>
+
+
+    <div class="col-5 mb-3">
+    	<br><br>
+    	
+         
+        <div class="card shadow animated-border">
+
+            <div class="card-body"><center><img src={%static "images/www1.png" %} width="100%" height="100%"></img></center>
+            	<br>
+<form action="" method="POST">
+			{% csrf_token %}
+			<label><b>Enter URL</b></label>
+			<input type="text" name="whois" placeholder="www.example.com" class="form-control rounded-pill shadow"><br/></div>
+			<div class="form-btn" align="center">
+               <button type="submit" id="scan-button" class="btn btn-info btn-lg w-40 mb-3-10px rounded-pill">Scan</button>
+               <div id="loading-spinner" class="loading-spinner-container">
+               <div class="loading-spinner"></div>
+           </div>
+               <br><br><br>
+               </div>
+			
+		</div>
+	</form>
+<br><br>
+</div>
+
+<hr>
+<br><br>
+<div class="col-5">
+    <img src={%static "images/whoimg.webp" %} height="70%" width="80%"></img>
+    <br><br><br><br><br>
+
+</div>
+
+<div class="col-6">
+    <h2 class="display-5 text-info">How Does<br> WHOIS Work?</h2>
+<p><b>WHOIS, an Internet protocol, works by querying databases containing registration details of domain names, IP addresses, and autonomous system numbers. It enables users to retrieve information about the entities responsible for registering internet resources, including contact details, registration dates, and administrative statuses. Here's an overview of how WHOIS works in the context of Intelliguard cyber:</b></p>
+    
+
+  
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="col-1"></div>
+<br>
+
+<div class="row">
+<div class="col-3"></div>
+    
+    <div class="col-5">
+ <div class="card shadow animated-border">
+    <center><h3>Identifying Ownership</h3></center> 
+   WHOIS helps cybersecurity professionals identify the owners of domain names and IP addresses, which is crucial for investigating security incidents and attributing responsibility, enabling effective communication for resolution.
+</div>
+
+ <br>
+ <br>
+
+
+<div class="card shadow animated-border">
+ <center><h3>Cyber-Sleuthing</h3></center> 
+<p>WHOIS data can be used to identify suspicious domains used for phishing or fraudulent activities. Security teams can monitor newly registered domains for signs of malicious intent and take preventive measures accordingly.</p>
+ </div></div>
+
+<div class="col-4">
+    <div class="card shadow animated-border">
+    <center><h3>Tracking Malicious Activities</h3></center>
+    By querying WHOIS databases, security analysts can track down the registration details of potentially malicious domains or IP addresses involved in cyber attacks, aiding in threat intelligence efforts.</div>
+<br><br>
+
+<div class="card shadow animated-border">
+    <center><h3>Cyber-Forensics</h3></center>
+     <p>Cybersecurity researchers leverage WHOIS to investigate the infrastructure of threat actors,such as their domain registration patterns,network affiliations,reveals threat actors infrastructure to uncover larger cybercrime.</p></div>
+</div>
+</div>
+<br>
+<br>
+<div class="row justify-content-center">
+    <div class="col-5"></div>
+    <div class="col-6 text-center">
+        <div class="card shadow animated-border">
+            <h3>Compliance and Regulations</h3>
+            <p>WHOIS data is often required for compliance with regulations such as GDPR (General Data Protection Regulation) and ICANN (Internet Corporation for Assigned Names and Numbers) policies.</p>
+        </div>
+    </div>
+</div> 
+<br>
+<br> 
+<script>
+    // Function to show the loading spinner
+    function showLoadingSpinner() {
+        var spinner = document.getElementById("loading-spinner");
+        if (spinner) {
+            spinner.style.display = "block";
+        }
+    }
+
+    // Function to hide the loading spinner
+    function hideLoadingSpinner() {
+        var spinner = document.getElementById("loading-spinner");
+        if (spinner) {
+            spinner.style.display = "none";
+        }
+    }
+
+    // Function to simulate the scan process
+    function simulateScanProcess() {
+        // Show the loading spinner when the scan starts
+        showLoadingSpinner();
+
+        // Simulate a scan process (replace this with your actual scan process)
+        setTimeout(function() {
+            // After the scan completes (simulated with setTimeout), hide the spinner
+            hideLoadingSpinner();
+
+            // Show the scan results by updating the content of the scan-results div
+            var scanResultsDiv = document.getElementById("scan-results");
+            if (scanResultsDiv) {
+                scanResultsDiv.innerHTML = "<h2>Scan Results</h2><p>Scan completed successfully!</p>";
+                scanResultsDiv.style.display = "block"; // Show the scan results
+            }
+        }, 4000); // Simulated scan time: 3 seconds
+    }
+
+    // Event listener for the scan button
+    document.getElementById("scan-button").addEventListener("click", simulateScanProcess);
+</script>
+
+
+
+{% endblock %}

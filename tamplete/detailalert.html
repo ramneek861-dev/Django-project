@@ -1,0 +1,66 @@
+{% extends 'sidebar.html'%}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-D1f8cj+yHhv4ktQg9OMRZ5hbCXp0KiXiNAlTfBHYI4+oi9cD0uQByh4PDSNhiMv4mY3R4wNKW2t1Q67tYnhnuw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="{%static 'icofont/icofont.min.css' %}">
+
+
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+  <br>
+</div>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1"> <!-- Increase width to col-md-10 and offset to col-md-1 -->
+      <div class="card border-primary">
+        <div class="card-header bg-primary text-white">
+          <h3 class="card-title">
+            <center><h1 class="display-4 text-light">Alert Details</h1></center>
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{ alert.description|safe|linebreaks }}</p>
+          <!-- Interactive Elements -->
+          <div class="btn-group">
+            <strong>Share this alert:</strong>
+            <center>
+              <a class="btn btn-primary" href="https://www.instagram.com/"><i class="icofont-instagram"></i></a>
+              <a class="btn btn-primary" href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ alert.heading }}"><i class="icofont-twitter"></i></a>
+              <a class="btn btn-primary" href="https://www.linkedin.com/shareArticle?url={{ request.build_absolute_uri }}&title={{ alert.heading }}"><i class="icofont-linkedin"></i></a>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+{% endblock %}

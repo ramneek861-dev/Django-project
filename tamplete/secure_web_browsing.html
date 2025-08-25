@@ -1,0 +1,291 @@
+{% extends 'sidebar.html'%}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Secure Web Browsing</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Custom CSS -->
+
+  <style>
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .card {
+    max-width: 800px; /* Increased card width */
+  }
+
+  .question {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .answers label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    font-size: 14px; /* Decreased button font size */
+  }
+
+  .btn-info:hover {
+    background-color: #138496;
+    border-color: #138496;
+  }
+
+  #results {
+    font-weight: bold;
+  }
+   body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1 class="text-center" style="color:#3ee4ed;">Secure Web Browsing</h1>
+      <div class="video-container">
+        <!-- Replace the video URL below with the URL of your video tutorial -->
+        <iframe width="560" height="315" src="{%static 'vedio/secureweb.mp4' %}" type="video/mp4" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <h5 >Learn about secure web browsing and best practices by watching the video tutorial above.</h5>
+    </div>
+    <center>
+      <p class="lead text-info " >In addition to the video, here are some tips to enhance your secure web browsing:</p></center>
+      <ul>
+        <li  class="text-secondary">Keep your web browser up to date with the latest security patches.</li>
+        <li  class="text-secondary">Use HTTPS-enabled websites whenever possible, especially when submitting sensitive information.</li>
+        <li  class="text-secondary">Be cautious when clicking on links or downloading files from unknown or untrusted websites.</li>
+        <li  class="text-secondary">Enable browser security features such as pop-up blockers and privacy settings.</li>
+        <li  class="text-secondary">Consider using browser extensions or plugins for additional security and privacy.</li>
+      </ul>
+      <h6 class="text-center">By following these tips, you can minimize the risk of security threats while browsing the web.</h6>
+
+      <hr>
+
+      <h2  class="text-center text-info">Additional Tips for Secure Web Browsing</h2>
+      <h6>Here are some additional tips to further enhance your security while browsing the web:</h6>
+      <ul>
+        <li class="text-secondary">Avoid using public Wi-Fi networks for sensitive activities such as online banking or shopping.</li>
+        <li  class="text-secondary">Regularly clear your browser cookies and cache to remove tracking data and improve privacy.</li>
+        <li  class="text-secondary">Educate yourself about common online threats such as phishing scams and malware.</li>
+        <li  class="text-secondary">Use a reputable antivirus program with web protection features to block malicious websites and downloads.</li>
+        <li  class="text-secondary">Consider using a virtual private network (VPN) for additional privacy and security while browsing the web.</li>
+      </ul>
+
+      <h6>By implementing these additional measures, you can enjoy a safer and more secure browsing experience.</h6>
+    </div>
+  </div>
+  <br>
+  <!-- Blog-like information section start below  -->
+  <div class="container">
+    <div class="card-container">
+      <div class="card shadow border-info p-4" style="max-width: 800px;"> <!-- Increase card width -->
+        <h2 class="text-info">Understanding Secure Web Browsing</h2>
+        <p>Secure web browsing involves taking precautions to protect your personal information and devices while surfing the internet. Here are some key concepts to understand:</p>
+        <ol>
+          <li><strong>HTTPS Encryption:</strong> Websites that use HTTPS encrypt data transmitted between your browser and the website's server, providing a secure connection and protecting against eavesdropping and data tampering.</li>
+          <li><strong>Browser Security Features:</strong> Web browsers offer various security features such as pop-up blockers, phishing filters, and privacy settings to help users stay safe online.</li>
+          <li><strong>Safe Browsing Practices:</strong> Being cautious when clicking on links, downloading files, and sharing personal information online can help prevent security threats such as malware infections and phishing scams.</li>
+          <li><strong>Regular Software Updates:</strong> Keeping your web browser, operating system, and plugins up to date with the latest security patches is essential for protecting against known vulnerabilities and exploits.</li>
+          <li><strong>Privacy Protection:</strong> Taking steps to safeguard your online privacy, such as clearing browser cookies and using privacy-enhancing browser extensions, can help prevent tracking and profiling by advertisers and third-party trackers.</li>
+        </ol>
+        <p>By understanding these concepts and adopting best practices for secure web browsing, you can minimize the risk of falling victim to online threats and protect your sensitive information.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Blog-like information section end above -->
+  <br>
+  <br>
+
+  <!-- Quiz Section start below  -->
+  <!--  -->
+  <div class="container">
+  <div class="card-container">
+    <div class="card shadow border-info p-4" style="max-width: 800px;"> <!-- Increase card width -->
+      <center><h2 class="text-info">Test Your Knowledge</h2></center>
+      <p class="lead text-center">Take the quiz below to test your understanding of secure web browsing:</p>
+      <div id="quiz"></div>
+      <button id="submitBtn" class="btn btn-info text-light rounded-pill mt-4 px-2 py-1">Submit</button> <!-- Decrease button size -->
+      <div id="results" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  <!--  -->
+
+  
+  <script>
+    const quizContainer = document.getElementById('quiz');
+    const resultsContainer = document.getElementById('results');
+    const submitButton = document.getElementById('submitBtn');
+
+    const myQuestions = [
+  {
+    question: "1. What is one key practice for secure web browsing?",
+    answers: {
+      a: "Clicking on every link",
+      b: "Using outdated web browsers",
+      c: "Regularly updating software",
+      d: "Disabling browser security features"
+    },
+    correctAnswer: "c"
+  },
+  {
+    question: "2. Why is HTTPS encryption important for secure web browsing?",
+    answers: {
+      a: "To slow down internet speed",
+      b: "To prevent tracking by advertisers",
+      c: "To provide a secure connection",
+      d: "To display more ads on webpages"
+    },
+    correctAnswer: "c"
+  },
+  {
+    question: "3. What should you do if you encounter a suspicious website?",
+    answers: {
+      a: "Click on all the links on the website",
+      b: "Enter your personal information",
+      c: "Close the browser tab or window",
+      d: "Download files from the website"
+    },
+    correctAnswer: "c"
+  },
+  {
+    question: "4. Which of the following is NOT a recommended practice for secure web browsing?",
+    answers: {
+      a: "Regularly updating antivirus software",
+      b: "Using public Wi-Fi for sensitive activities",
+      c: "Clearing browser cookies and cache",
+      d: "Using browser extensions for privacy"
+    },
+    correctAnswer: "b"
+  },
+  {
+    question: "5. What is the purpose of browser security features?",
+    answers: {
+      a: "To slow down web browsing",
+      b: "To provide a better user experience",
+      c: "To block malicious content and protect privacy",
+      d: "To display more advertisements"
+    },
+    correctAnswer: "c"
+  },
+  {
+    question: "6. How can you protect your online privacy while browsing the web?",
+    answers: {
+      a: "Sharing personal information on social media",
+      b: "Clearing browser cookies and cache",
+      c: "Clicking on every advertisement",
+      d: "Disabling browser security features"
+    },
+    correctAnswer: "b"
+  },
+  {
+    question: "7. What should you do if you receive a suspicious email with a link?",
+    answers: {
+      a: "Click on the link to see where it leads",
+      b: "Forward the email to all your contacts",
+      c: "Delete the email without clicking on the link",
+      d: "Reply to the email asking for more information"
+    },
+    correctAnswer: "c"
+  },
+  {
+    question: "8. How can you ensure that your web browser is secure?",
+    answers: {
+      a: "Using an outdated version of the browser",
+      b: "Regularly updating the browser and its plugins",
+      c: "Disabling browser security features",
+      d: "Downloading files from unknown websites"
+    },
+    correctAnswer: "b"
+  },
+  {
+    question: "9. What is one way to protect against malicious downloads while browsing the web?",
+    answers: {
+      a: "Clicking on every download link",
+      b: "Using a virtual private network (VPN)",
+      c: "Disabling antivirus software",
+      d: "Being cautious when downloading files from unknown sources"
+    },
+    correctAnswer: "d"
+  },
+  {
+    question: "10. Why is it important to use strong, unique passwords for online accounts?",
+    answers: {
+      a: "To make it easier to remember passwords",
+      b: "To increase vulnerability to cyber attacks",
+      c: "To minimize the risk of unauthorized access",
+      d: "To display more advertisements on webpages"
+    },
+    correctAnswer: "c"
+  }
+];
+
+function buildQuiz() {
+  const output = [];
+
+  myQuestions.forEach((currentQuestion, questionNumber) => {
+    const answers = [];
+
+    for (letter in currentQuestion.answers) {
+      answers.push(
+        `<label>
+          <input type="radio" name="question${questionNumber}" value="${letter}">
+          ${letter}: ${currentQuestion.answers[letter]}
+        </label>`
+      );
+    }
+
+    output.push(
+      `<div class="question"> ${currentQuestion.question} </div>
+      <div class="answers"> ${answers.join('')} </div>`
+    );
+  });
+
+  quizContainer.innerHTML = output.join('');
+}
+
+function showResults() {
+  const answerContainers = quizContainer.querySelectorAll('.answers');
+  let numCorrect = 0;
+
+  myQuestions.forEach((currentQuestion, questionNumber) => {
+    const answerContainer = answerContainers[questionNumber];
+    const selector = `input[name=question${questionNumber}]:checked`;
+    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+    if (userAnswer === currentQuestion.correctAnswer) {
+      numCorrect++;
+      answerContainers[questionNumber].querySelector(`input[value='${userAnswer}']`).parentElement.style.color = 'green'; // Highlight correct answer in green
+    } else {
+      answerContainers[questionNumber].querySelector(`input[value='${userAnswer}']`).parentElement.style.color = 'red'; // Highlight incorrect answer in red
+      answerContainers[questionNumber].querySelector(`input[value='${currentQuestion.correctAnswer}']`).parentElement.style.color = 'green'; // Highlight correct answer in green
+    }
+  });
+
+  resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length} correct`;
+}
+
+buildQuiz();
+
+submitButton.addEventListener('click', showResults);
+</script>
+   
+
+</body>
+</html>
+
+{% endblock %}

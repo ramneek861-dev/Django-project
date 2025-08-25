@@ -1,0 +1,46 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/aos.css' %}">
+<script src="https://use.fontawesome.com/a6f0361695.js"></script>
+
+<div class="container py-5">
+    <div class="text-center mb-4" data-aos="fade-down">
+        <h1 class="display-4 text-primary">We Value Your Feedback</h1>
+        <p class="lead">Help us serve you better by sharing your thoughts!</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-5 mb-4" data-aos="fade-right">
+            <img src="{% static 'images/porsche.webp' %}" class="img-fluid rounded shadow-lg" alt="Porsche Image">
+        </div>
+        <div class="col-md-5 mb-4" data-aos="fade-left">
+    <form method="POST" action="" class="border rounded p-4 bg-light">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="text" class="form-control form-control-lg" name="nm" placeholder="Your Name" required>
+        </div>
+        <br>
+        <div class="form-group">    
+            <textarea class="form-control form-control-lg" name="msg" placeholder="Your Review" rows="5" required></textarea>
+        </div>
+        <br><br>
+        <center><button type="submit" class="btn btn-primary btn-lg btn-block">Submit Review</button></center>
+    </form>
+</div>
+
+    {% if msg %}
+<script type="text/javascript">
+  alert("{{msg}}")
+</script>
+{% endif %}
+
+</div>
+
+<!-- Animation Library -->
+<script src="{% static 'js/aos.js' %}"></script>
+<script>
+    AOS.init();
+</script>
+
+{% endblock %}

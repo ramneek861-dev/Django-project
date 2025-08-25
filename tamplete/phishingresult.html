@@ -1,0 +1,60 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Scanning Result</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        h1 {
+            color: #343a40;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .result {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 0 auto;
+            max-width: 500px;
+            text-align: center;
+            animation: fadeInUp; /* Add fadeInUp animation */
+            animation-duration: 1s;
+        }
+        .result p {
+            font-size: 18px;
+            color: #495057;
+        }
+        .safe {
+            background-color: #dff0d8;
+            border-color: #d0e9c6;
+            color: #155724;
+        }
+        .phishing {
+            background-color: #f2dede;
+            border-color: #ebcccc;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <br><br><br><br><br>
+        <h1 class="animate__animated animate__fadeInDown">Website Scanning Result</h1><br>
+        <div class="result {% if result == 'safe' %}safe{% else %}phishing{% endif %} animate__animated animate__fadeInUp">
+            <p class="animate__animated animate__fadeIn">This Website is <u>{{ result }}</u>.</p>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}

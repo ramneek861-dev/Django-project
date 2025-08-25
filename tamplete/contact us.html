@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles.css">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="icofont/icofont.min.css">
+	<link rel="stylesheet" href="{%static 'css/aos.css' %}">
+    <style>
+        /* Custom styles to prevent unwanted movement */
+        body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .card-body {
+            transition: background-color 0.5s ease; /* Smooth background color transition */
+        }
+        
+        /* Ensure card width consistency */
+        .card {
+            width: 23rem;
+        }
+    </style>
+</head>
+<body style="background:#fff">
+	<div class="row  text-light text-center pt-5 pb-7">
+		<div class="col-md-12">
+		<h1 class="display-1 text-info"><b><div data-aos="fade-down">Contact Us</div></h1></b>
+	</div>
+</div>
+<br><br><br><br>
+<div class="container">
+    <div class="row text-center" >
+      <div class="col-md-4 text-center">
+      	<div class="card border-info mb-3 " style="max-width: 23rem;"></div>
+      	
+         <div class="card shadow" style="width: 23rem;" rounded-pill circle>
+  <div data-aos="flip-left"><img src={%static "images/call3.jpg" %} width="60%" height="50%"></img></div>
+  <div class="card-body">
+    <h5 class="card-title" align="center"><b><I>PHONE:</I></b></h5>
+    <p class="card-text" align="center"><b>9888736783</b><br><b>6283108410</b></p>
+  </div>
+</div>
+</div>
+
+<div class="col-md-4">
+	<div class="card border-info mb-3" style="max-width: 23rem;"></div>
+<div class="card shadow" style="width: 23rem;"  rounded-pill circle>
+  <div data-aos="flip-left"><img src={%static "images/mail.jpg" %} width="65%" height="90%" align="center"></img></div>
+  <div class="card-body">
+    <h5 class="card-title" align="center"><b>EMAIL:</b></h5>
+    <p class="card-text"align="center"><b>manpreetkaurman7@gmail.com</b><br><b>ramneek77@gmail.com</b></p>
+  </div>
+</div>
+</div>
+<div class="col-md-4">
+	<div class="card border-info mb-3" style="max-width: 23rem;"></div>
+<div class="card shadow" style="width: 23rem;"  rounded-pill circle>
+  <div data-aos="flip-left"><img src="https://img.freepik.com/premium-vector/web-map-marker-3d-icon-blue-volumetric-navigation-symbol-with-target-location_92753-6782.jpg?size=626&ext=jpg" width="60%" height="50%"></img></div>
+  <div class="card-body" pl-5>
+    <h5 class="card-title" align="center"><b>ADDRESS:</b></h5>
+    <p class="card-text"align="center"><b>frankfurt am main</b><br><b>Germany</b></p>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<br><br><br><br>
+<div class="container">
+<div class="row  text-light text-center" align="left">
+		<div class="col-md-12 offset-md-12">
+			<hr>
+		<h1 class="display-1 autorix-text text-info"><b><div data-aos="flip-left"><img id="myImage" src="https://html.designingmedia.com/whizcyber/assets/images/section2-list-img.png" alt="My Image"></div><br><div data-aos="zoom-in-down">Wanna Get Started</div></h1></b>
+
+
+		<H1 class="text-info"><B><div data-aos="zoom-in-up">Send Us Massege</div></H1></B>
+	
+	<br><br><br>
+</div>
+
+
+		<form>
+			<div class="row" data-aos="fade-up">
+			<div class="col-md-4">
+			<input type="text" placeholder="Enter name" class="form-control border-info rounded-pill shadow" pattern="[A-Z a-z]{3,30}" title="enter only 3-30 characters" reqired ><br/></div>
+			<div class="col-md-4">
+			<input type="text" placeholder="Phone" class="form-control border-info rounded-pill shadow" pattern="{0,9}" required><br/></div>
+			<div class="col-md-4">
+			<input type="Email" placeholder="Email" class="form-control border-info rounded-pill shadow"><br/></div>
+			<br>
+		</div>
+	
+
+
+			<label class="pt-3 text-dark">massege</label>
+			<div data-aos="fade-up"><textarea class="form-control border-info bg-light rounded shadow" pattern="[A-Z a-z]{3,500}" title="enter only 3-500 characters" required rows="5"></textarea></div>
+			<br/>
+	</div>
+</div> 
+            <div class="form-btn" align="center" data-aos="fade-up">
+               <button type="submit" class="btn btn-primary btn-lg w-40 mb-3-10px">Submit</button>
+               <br><br><br>
+               </div>
+ 		</form>
+ 		</div>
+ 	</div>
+ </div>
+ <script src="{%static 'js/aos.js' %}"></script>
+<script>
+AOS.init()
+</script> 
+</body>
+</html>
+{% endblock %}

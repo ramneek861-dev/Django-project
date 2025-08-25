@@ -1,0 +1,76 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+
+<style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .fadeIn {
+        animation: fadeIn 1s ease-in-out;
+    }
+    body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+</style>
+
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-lg fadeIn">
+                <div class="card-body p-5">
+                    <h1 class="display-4 text-center mb-4 text-info">IP Address Info</h1>
+                    <hr class="mb-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Analysis For:</strong> {{ ip }}</p>
+                            <p><strong>Continent:</strong> {{ continent }}</p>
+                            <p><strong>Country:</strong> {{ country }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Last Analysis Stats:</strong> {{ last_analysis_stats }}</p>
+                            <p><strong>Last Analysis Date:</strong> {{ last_analysis_date }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<ul>
+    {% for key, value in n.items %}
+    <li>
+        <img id="myImage" src="https://html.designingmedia.com/whizcyber/assets/images/section2-list-img.png" alt="My Image" width="3%" height="3%">
+        <h3>{{ key }}</h3>
+        {% if value == "unrated" %}
+            <p>The value is currently unrated.</p>
+        {% else %}
+            {% for n, v in value.items %}
+                <b><u>{{ k }}</u></b>&nbsp;&nbsp; 
+                {% if v == "clean" %}
+                    <span style="color: green;">{{ v }}</span>
+                {% else %}
+                    {{ v }}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+<!-- Message at the end -->
+                    <p class="text-center mt-4">Thank you for using our IP Address Info service!</p>
+                </div>
+            </div>
+
+
+{% endblock %}

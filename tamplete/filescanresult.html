@@ -1,0 +1,100 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+    /* Custom styles for enhanced appearance */
+    .file-info-container {
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 20px 40px rgba(0, 123, 255, 0.2);
+        padding: 40px;
+        background-color: #ffffff;
+        animation: scale-in 0.5s ease-out;
+    }
+
+    @keyframes scale-in {
+        0% {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .file-info-title {
+        font-size: 3.5rem;
+        color: #17a2b8;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .file-info-stats {
+        font-size: 2rem;
+        color: #6c757d;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .file-info-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .file-info-item {
+        margin-bottom: 20px;
+    }
+
+    .file-info-label {
+        font-weight: bold;
+        color: #495057;
+    }
+
+    .file-info-value {
+        color: #495057;
+    }
+
+    .catch-up-message {
+        font-size: 1.5rem;
+        color: #6c757d;
+        text-align: center;
+        margin-top: 20px;
+        opacity: 0;
+        animation: fade-in 0.5s ease-out 1.5s forwards;
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card border-0 shadow-lg mt-4 file-info-container">
+                <div class="card-body">
+                    <h1 class="file-info-title">File Info</h1>
+                    <p class="file-info-stats">Stats: {{ stats }}</p>
+                    <hr>
+                    <ul class="file-info-list">
+                        {% for x in l %}
+                        <li class="file-info-item">
+                            <span class="file-info-label">{{ x.0 }}</span> - <span class="file-info-value">{{ x.1 }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <p class="catch-up-message">You're all caught up!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+    

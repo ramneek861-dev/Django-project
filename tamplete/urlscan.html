@@ -1,0 +1,219 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	  <style>
+        /* Define a class to apply animated border color */
+        .animated-border {
+            border: 3px solid  #00cccc ; /* Set initial border color (blue in this example) */
+            padding: 10px; /* Optional: Add padding for better appearance */
+            width: 370px; /* Optional: Set width for demonstration */
+            animation: animateBorder 1s infinite alternate; /* Apply animation to the border */
+        }
+
+        /* Define the animation */
+        @keyframes animateBorder {
+            0% {
+                border-color: #0000cc; /* Start with blue */
+            }
+            100% {
+                border-color: #3ee4ed; /* End with red */
+            }
+        }
+       body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .loading-spinner-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+        z-index: 9999;
+    }
+
+    .loading-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        border: 2px solid #3498db; /* Blue border */
+        border-top: 2px solid #8A2BE2; /* Yellow border on top for spinner effect */
+        border-radius: 50%;
+        animation: spin 1s linear infinite; /* Animation for spinning effect */
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+
+<div class="row">
+<div class="col-6">
+
+
+<br><br><BR>
+<h2 class="display-5 text-info"><b><img id="myImage" src="https://html.designingmedia.com/whizcyber/assets/images/section2-list-img.png" alt="My Image"> URL<br>&nbsp;&nbsp; SCANNING</b></h2>
+<br>
+<p><b>Welcome to our Intelliguard Cyber URL Scanning page, where we prioritize the safety and security of your online experience.Our comprehensive scanning process provides peace of mind by identifying and blocking suspicious links, phishing attempts, malware, and other cyber threats before they harm your devices or networks. Stay safe and secure with our Intelliguard Cyber URL Scanning service.</p></b>
+</div>
+
+
+    <div class="col-5 mb-3">
+    	<br><br>
+    	
+         
+        <div class="card shadow animated-border">
+
+            <div class="card-body"><center><img src="https://cdn3d.iconscout.com/3d/premium/thumb/web-monitoring-7743680-6805596.png" width="90%" height="70%"></img></center>
+            	<br>
+<form action="" method="POST">
+			{% csrf_token %}
+			<label><b>Enter URL</b></label>
+			<input type="text" name="url" placeholder="www.example.com" class="form-control rounded-pill shadow"><br/></div>
+			<div class="form-btn" align="center">
+               <button type="submit"id="scan-button" class="btn btn-info btn-lg w-40 mb-3-10px rounded-pill">Scan</button>
+               <div id="loading-spinner" class="loading-spinner-container">
+               <div class="loading-spinner"></div>
+           </div>
+               <br><br><br>
+               </div>
+			
+		</div>
+	</form>
+<br><br>
+</div>
+
+<hr>
+<br><br>
+
+
+<div class="col-5">
+	<img src={%static "images/foot2.png" %} height="70%" width="80%"></img>
+	<br><br><br><br><br>
+
+</div>
+
+<div class="col-6">
+	<h2 class="display-5 text-info">How Does<br> URL Scanner Work?</h2>
+<p><b>URL scanning refers to the process of analyzing URLs (Uniform Resource Locators) for potential security threats, malicious content, or indicators of compromise. This process is typically performed by specialized security tools or services designed to detect and mitigate web-based threats. Here's an overview of how URL scanning works in the context of Intelliguard cyber:</b></p>
+	
+
+  
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="col-1"></div>
+<br>
+
+<div class="row">
+<div class="col-3"></div>
+	
+	<div class="col-5">
+ <div class="card shadow animated-border">
+ 	<center><h3>URL Collection</h3></center> 
+ The URL scanning process begins with the collection of URLs to be scanned. These URLs can come from various sources, including website logs, email messages, social media, user submissions, or threat intelligence feeds.</div>
+
+ <br>
+ <br>
+
+
+<div class="card shadow animated-border">
+ <center><h3>Detection of Threats</h3></center> 
+<p>URL scanners detect threats, vulnerabilities,and suspicious activity.Common threats include<u> malware hosting</u> <u>phishing</u> <u>drive-by downloads</u> and <u>malicious redirects</u>to harmful websites or phishing pages.</p>
+ </div></div>
+
+<div class="col-4">
+	<div class="card shadow animated-border">
+	<center><h3>URL Analysis</h3></center>
+	 Each collected URL is subjected to analysis to determine its reputation, trustworthiness, and potential security risks. This analysis may involve several techniques:
+Reputation Lookup<br>,Content Inspection,Behavioral Analysis</div>
+<br><br>
+
+<div class="card shadow animated-border">
+	<center><h3>Risk Assessment</h3></center>
+	 <p> Each identified threat may be assigned a risk score or severity level based on factors such as the nature of the threat, its potential impact, and the likelihood of exploitation. This helps prioritize responses and mitigation efforts.</p></div>
+</div>
+</div>
+<br>
+<br>
+<div class="row justify-content-center">
+	<div class="col-5"></div>
+    <div class="col-6 text-center">
+        <div class="card shadow animated-border">
+            <h3>Reporting and Remediation</h3>
+            <p>URL scan results compiled into report with threat details, affected URLs, recommended actions, and context. Remediation actions vary based on threat severity.</p>
+        </div>
+    </div>
+</div> 
+<br>
+<br>
+<script>
+    // Function to show the loading spinner
+    function showLoadingSpinner() {
+        var spinner = document.getElementById("loading-spinner");
+        if (spinner) {
+            spinner.style.display = "block";
+        }
+    }
+
+    // Function to hide the loading spinner
+    function hideLoadingSpinner() {
+        var spinner = document.getElementById("loading-spinner");
+        if (spinner) {
+            spinner.style.display = "none";
+        }
+    }
+
+    // Function to simulate the scan process
+    function simulateScanProcess() {
+        // Show the loading spinner when the scan starts
+        showLoadingSpinner();
+
+        // Simulate a scan process (replace this with your actual scan process)
+        setTimeout(function() {
+            // After the scan completes (simulated with setTimeout), hide the spinner
+            hideLoadingSpinner();
+
+            // Show the scan results by updating the content of the scan-results div
+            var scanResultsDiv = document.getElementById("scan-results");
+            if (scanResultsDiv) {
+                scanResultsDiv.innerHTML = "<h2>Scan Results</h2><p>Scan completed successfully!</p>";
+                scanResultsDiv.style.display = "block"; // Show the scan results
+            }
+        }, 4000); // Simulated scan time: 3 seconds
+    }
+
+    // Event listener for the scan button
+    document.getElementById("scan-button").addEventListener("click", simulateScanProcess);
+</script>
+
+
+
+
+</body>
+</html>
+
+
+	
+{% endblock%}

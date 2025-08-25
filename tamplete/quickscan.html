@@ -1,0 +1,133 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+      <style>
+        /* Define a class to apply animated border color */
+        .animated-border {
+            border: 3px solid  #00cccc ; /* Set initial border color (blue in this example) */
+            padding: 10px; /* Optional: Add padding for better appearance */
+            width: 370px; /* Optional: Set width for demonstration */
+            animation: animateBorder 1s infinite alternate; /* Apply animation to the border */
+        }
+
+        /* Define the animation */
+        @keyframes animateBorder {
+            0% {
+                border-color: #0000cc; /* Start with blue */
+            }
+            100% {
+                border-color: #3ee4ed ; /* End with red */
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+
+<div class="row">
+<div class="col-6">
+
+<br><br><BR>
+<h2 class="display-5 text-info"><b><img id="myImage" src="https://html.designingmedia.com/whizcyber/assets/images/section2-list-img.png" alt="My Image"> PORT SCANNING<br>&nbsp;&nbsp;WITH IP</b></h2>
+<br>
+<p><b>Welcome to our Intelliguard Cyber Port Scanning service, where we prioritize the security of your digital environment. Our scanning process meticulously examines the open "doors" (ports) in your digital systems, akin to checking the doors of a house. For instance, port 80 is typically used for websites, while port 22 is common for secure file transfers. By identifying these open ports and potential vulnerabilities, we assist in safeguarding your devices and networks against cyber threats. Stay secure with our Intelliguard Cyber Port Scanning service.
+</p></b>
+</div>
+
+    
+    <div class="col-5 mb-3">
+        <br><br><br>
+        <div class="card shadow animated-border">
+
+            <div class="card-body"><center><img src="https://cdn3d.iconscout.com/3d/premium/thumb/man-using-cyber-security-tools-7637361-6741549.png?f=webp" width="90%" height="70%"></img></center>
+                <br><br><br>
+<form action="" method="POST">
+    {% csrf_token %}
+            
+            <label><b>Enter IP Address</b></label>
+            <input type="text" placeholder="IP or DOMAIN" class="form-control rounded-pill shadow"><br/></div>
+            <div class="form-btn" align="center">
+               <button type="submit" class="btn btn-info btn-lg w-40 mb-3-10px rounded-pill">Scan</button>
+               <br><br><br>
+               </div>
+            
+        </div>
+    </form>
+</div>
+</div>
+<br><hr>
+<div class="row">
+    <div class="col-md-6">
+      <img src={%static "images/ip.webp" %} width="90%">
+    </div>
+    <div class="col-md-6">
+<h2 class="display-5 text-info"><b>How Does<br>Port Scanning  with IP Work?</b></h2>
+        <p><b>Port scanning with an IP address is like knocking on doors to see which ones are open on a house. In the digital world, it's checking specific entry points, called ports, on a computer or network. For example, port 80 is like a front door used for websites. By scanning with an IP address, you can find out which ports are open or closed, helping to identify potential security weaknesses that hackers could exploit.</b></p>
+    </div>
+</div>
+<br>
+<br>
+
+<div class="row">
+<div class="col-md-6 ">
+<div class="card shadow animated-border">
+<div class="card-body">
+    <h3>1. Identification</h3>
+    <p>First, you choose the IP address of the computer or network you want to scan. This is like picking which house you want to knock on the doors of in a neighborhood. Once you have selected it, the port scanning process begins.</p><br>
+</div>
+</div>
+<br>
+<div class="card shadow animated-border">
+<div class="card-body">
+    <h3>2. Selection of Ports</h3>
+    <p>Next, you decide which specific "doors" or ports you want to check on that IP address. Each port serves a different purpose, like port 80 for websites or port 22 for secure file transfers. It's akin to selecting which rooms or areas within the house you want to inspect more closely, such as the front door, back door, windows, or garage. </p>
+</div>
+</div>
+
+</div>
+<div class="col-md-6 ">
+<div class="card shadow animated-border">
+<div class="card-body"><h3>3. Scanning Process</h3>
+    <p>Now,initiating a systematic exploration of the target IP address's ports. It's akin to traversing down a street and methodically knocking on each door to discern its state—whether it's open or closed,. Similarly, the port scanning tool sends messages to  network to ascertain its accessibility.
+</p>
+</div>
+</div>
+<br>
+<div class="card shadow animated-border ">
+<div class="card-body"><center>
+    <h3>4. Analysis of Results</h3>
+    <p> After scanning all the ports, you analyze the responses you received. If a port responds, it's like finding an open door, which could be a potential vulnerability that hackers could exploit. If there's no response, it's like finding a closed door, which is generally better for security .</p><br></center>
+</div>
+</div>
+</div>
+<!-- main div end below -->
+</div>
+<br>
+<center><div class="card shadow animated-border">
+<div class="card-body"><center>
+    <h3>5. Reporting</h3>
+    <p>Finally, you compile the results into a report. This report lists all the open ports found during the scan, along with any potential vulnerabilities they may represent. This information helps you understand the security status of the computer or network and take steps to address any weaknesses found.
+
+
+
+
+</p></center>
+</div>
+</div></center>
+<br><br>
+
+&nbsp;
+</body>
+</html>
+
+
+    
+{% endblock %}

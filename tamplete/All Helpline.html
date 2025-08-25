@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+<div class="container">
+<br><br>
+<center><div class="display-3 text-info"><b>Helpline Number</b></center>
+	<br><br><br><hr></div></div>
+<div class="container">
+	<br>
+	<br>
+	
+    {% for i in data %}
+<div class="row p-4 border shadow mt-4">
+<div class="col-6">
+<h4 style="color:#3ee4ed"><u>Regional_office</u></h4><b><h5>{{i.Regional_Office}}</b></h4></h5>
+<h4 style="color:#3ee4ed"><u>Name</u></h4><b><h5>{{i.Name}}</b></h5>
+<h4 style="color:#3ee4ed"><u>Email</u></h4><b><h5>{{i.Email}}</b></h5>
+<h4 style="color:#3ee4ed"><u>Address</u></h4><b><h5>{{i.Address}}</b></h5>
+
+</div>
+
+	<div class="col-md-3">
+		<br><br>
+		<i class="icofont-telephone p-3 border rounded-circle shadow "style="color:#3ee4ed"></i>
+		<h3 class="pt-5">Telephone_no.</h3>
+		<p><b>{{i.Telephone_No}}</b></p>
+
+	</div>
+	<div class="col-md-3">
+		<br><br>
+		<i class="icofont-phone p-3 border rounded-circle shadow"style="color:#3ee4ed"></i>
+		<h3 class="pt-5">Mobile_no.</h3>
+		<p><b>{{i.Mobile_No}}</b></p>
+	</div>
+</div>
+
+
+
+{% endfor %}
+</div>
+</div>
+
+
+
+
+    
+<br><br>
+
+
+{% endblock %}

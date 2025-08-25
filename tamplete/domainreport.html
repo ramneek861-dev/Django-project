@@ -1,0 +1,72 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+
+
+<style>
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .fadeIn {
+        animation: fadeIn 1s ease-in-out;
+    }
+    .message {
+        text-align: center;
+        font-size: 1.5rem;
+        color: #6c757d;
+        margin-top: 20px;
+    }
+    body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+</style>
+
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-lg fadeIn domain-info-card">
+                <div class="card-body p-5">
+                    <h1 class="display-4 text-center mb-4 text-info">Domain Info</h1>
+                    <hr>
+                    <p class="domain-info-stats"><b>Creation Date:</b> {{ creation_date }}</p>
+                    <p class="domain-info-stats"><b>Last Analysis Stats:</b> {{ last_analysis_stats }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ul class="domain-info-list">
+    {% for key, value in d.items %}
+    <li class="domain-info-item">
+        <img src="https://html.designingmedia.com/whizcyber/assets/images/section2-list-img.png" alt="Icon" width="30" height="30">
+        <h3>{{ key }}</h3>
+        {% if value == "unrated" %}
+            <p>The value is currently unrated.</p>
+        {% else %}
+            <ul>
+                {% for d, v in value.items %}
+                <li><b><u>{{ d }}</u></b>: {% if v == "clean" %}<span style="color: green;">{{ v }}</span>{% else %}{{ v }}{% endif %}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+<div class="message">
+    Thank you for using our service!
+</div>
+
+{% endblock %}
+

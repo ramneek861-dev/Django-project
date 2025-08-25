@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="container-fluid">
+	<div class="container">
+		<div class="row">
+			<b><h2 class="display-1 text-info text-center"> Cyber News</h2></b>
+			<i class="icofont-news text-center icofont-5x"></i>
+			{% for i in k %}
+			{% if forloop.counter0|divisibleby:4 %}
+			{% endif %}
+
+			<div class="col-md-4 p-2">
+				<div class="card border shadow" style="width: 20rem; ">
+					<img src="{{i.urlToImage}}" height="160px" class="card-img-top" alt="">
+					<div class="card-body" style="height: 350px; ">
+						<h5 class="card-title">{{i.title}}</h5>
+						<p class="card-text">{{i.content}}</p>
+						<a href="{{i.url}}" class="btn btn-primary">click here</a>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<br>
+{% endblock %}
+					
+			

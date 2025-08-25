@@ -1,0 +1,289 @@
+{% extends 'sidebar.html'%}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Protection and Privacy</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Custom CSS -->
+
+  <style>
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .card {
+    max-width: 800px; /* Increased card width */
+  }
+
+  .question {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .answers label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    font-size: 14px; /* Decreased button font size */
+  }
+
+  .btn-info:hover {
+    background-color: #138496;
+    border-color: #138496;
+  }
+
+  #results {
+    font-weight: bold;
+  }
+  body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1 class="text-center" style="color:#3ee4ed;">Data Protection and Privacy</h1>
+      <div class="video-container">
+        <!-- Replace the video URL below with the URL of your video tutorial -->
+        <iframe width="560" height="315" src="{%static 'vedio/data security.mp4' %}" type="video/mp4" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <h5>Learn about data protection and privacy best practices by watching the video tutorial above.</h5>
+    </div>
+    <center>
+      <p class="lead text-info">In addition to the video, here are some tips to enhance your data protection and privacy:</p>
+    </center>
+    <ul>
+      <li class="text-secondary">Regularly update your passwords and use strong, unique passwords for each account.</li>
+      <li class="text-secondary">Be cautious about sharing personal information online and only provide it to trusted sources.</li>
+      <li class="text-secondary">Review and adjust privacy settings on social media platforms and other online accounts to control who can access your information.</li>
+      <li class="text-secondary">Use encryption tools and secure communication channels when sharing sensitive data, such as email or messaging apps.</li>
+      <li class="text-secondary">Stay informed about data breaches and take immediate action to secure your accounts if you're affected.</li>
+    </ul>
+    <h6 class="text-center">By following these tips, you can better protect your personal data and maintain your privacy online.</h6>
+
+    <hr>
+
+    <h2 class="text-center text-info">Additional Tips for Data Protection and Privacy</h2>
+    <h6>Here are some additional tips to further enhance your data protection and privacy:</h6>
+    <ul>
+      <li class="text-secondary">Use two-factor authentication (2FA) whenever possible to add an extra layer of security to your accounts.</li>
+      <li class="text-secondary">Regularly review and delete old or unnecessary data to reduce your digital footprint and minimize the risk of exposure.</li>
+      <li class="text-secondary">Avoid clicking on suspicious links or downloading attachments from unknown sources, as they may contain malware or phishing attempts.</li>
+      <li class="text-secondary">Consider using privacy-focused browser extensions or tools to block trackers and enhance your online privacy.</li>
+      <li class="text-secondary">Be mindful of the information you share on public Wi-Fi networks and use a virtual private network (VPN) for added security.</li>
+    </ul>
+
+    <h6>By implementing these additional measures, you can strengthen your overall data protection and privacy practices.</h6>
+  </div>
+</div>
+<br>
+
+<!-- Blog-like information section start below  -->
+<div class="container">
+  <div class="card-container">
+    <div class="card shadow border-info p-4" style="max-width: 800px;"> <!-- Increase card width -->
+      <h2 class="text-info">Understanding Data Protection and Privacy</h2>
+      <p>Data protection and privacy are essential for safeguarding your personal information and maintaining control over how it's used. Here are some key concepts to understand:</p>
+      <ol>
+        <li><strong>Password Security:</strong> Using strong, unique passwords and enabling additional authentication measures like 2FA can help prevent unauthorized access to your accounts.</li>
+        <li><strong>Privacy Settings:</strong> Adjusting privacy settings on social media platforms and other online services allows you to control who can see your information and how it's shared.</li>
+        <li><strong>Encryption:</strong> Encrypting sensitive data ensures that it's unreadable to anyone without the proper decryption key, providing an extra layer of security during transmission and storage.</li>
+        <li><strong>Data Minimization:</strong> Minimizing the amount of personal data you share and regularly deleting old or unnecessary information reduces the risk of exposure in the event of a breach.</li>
+        <li><strong>Security Awareness:</strong> Staying informed about common threats like phishing scams and data breaches empowers you to recognize and respond to potential risks proactively.</li>
+      </ol>
+      <p>By understanding these concepts and implementing best practices for data protection and privacy, you can better safeguard your sensitive information and maintain your digital privacy.</p>
+    </div>
+  </div>
+</div>
+<!-- Blog-like information section end above -->
+<br>
+<br>
+
+<!-- Quiz Section start below  -->
+<div class="container">
+  <div class="card-container">
+    <div class="card shadow border-info p-4" style="max-width: 800px;"> <!-- Increase card width -->
+      <center><h2 class="text-info">Test Your Knowledge</h2></center>
+      <p class="lead text-center">Take the quiz below to test your understanding of data protection and privacy:</p>
+      <div id="quiz"></div>
+      <button id="submitBtn" class="btn btn-info text-light rounded-pill mt-4 px-2 py-1">Submit</button> <!-- Decrease button size -->
+      <div id="results" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const quizContainer = document.getElementById('quiz');
+  const resultsContainer = document.getElementById('results');
+  const submitButton = document.getElementById('submitBtn');
+
+  const myQuestions = [
+    {
+      question: "1. What is one key practice for data protection and privacy?",
+      answers: {
+        a: "Sharing personal information on public forums",
+        b: "Using weak and easily guessable passwords",
+        c: "Regularly updating passwords and using two-factor authentication",
+        d: "Storing sensitive data in unencrypted files"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "2. Why is encryption important for data protection?",
+      answers: {
+        a: "To make data more accessible",
+        b: "To prevent unauthorized access to sensitive information",
+        c: "To increase vulnerability to cyber attacks",
+        d: "To slow down data transmission"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "3. What should you do if you receive a suspicious email asking for personal information?",
+      answers: {
+        a: "Click on any links or attachments in the email",
+        b: "Reply to the email with the requested information",
+        c: "Forward the email to trusted contacts",
+        d: "Delete the email without responding"
+      },
+      correctAnswer: "d"
+    },
+    {
+      question: "4. Which of the following is NOT a recommended practice for data protection and privacy?",
+      answers: {
+        a: "Regularly updating privacy settings on social media platforms",
+        b: "Sharing sensitive information on public Wi-Fi networks",
+        c: "Using encryption tools for secure communication",
+        d: "Minimizing data collection and retention"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "5. How can you minimize the risk of data breaches?",
+      answers: {
+        a: "Sharing passwords with trusted friends",
+        b: "Encrypting sensitive data and using secure connections",
+        c: "Using the same password for multiple accounts",
+        d: "Sharing personal information on social media"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "6. Why is it important to review and adjust privacy settings on online accounts?",
+      answers: {
+        a: "To increase visibility of personal information",
+        b: "To prevent data breaches",
+        c: "To make it easier for others to find you online",
+        d: "To share more information with advertisers"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "7. What is the purpose of two-factor authentication (2FA)?",
+      answers: {
+        a: "To make it easier to access accounts",
+        b: "To provide an extra layer of security",
+        c: "To share account credentials with others",
+        d: "To slow down data transmission"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "8. How can you minimize your digital footprint?",
+      answers: {
+        a: "Sharing personal information on social media",
+        b: "Regularly deleting old or unnecessary data",
+        c: "Using the same password for multiple accounts",
+        d: "Disabling encryption on devices"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "9. Why should you be cautious about sharing personal information online?",
+      answers: {
+        a: "To increase your online presence",
+        b: "To prevent identity theft and unauthorized access",
+        c: "To receive targeted advertisements",
+        d: "To share information with friends and family"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "10. What should you do if you suspect your account has been compromised?",
+      answers: {
+        a: "Share your account credentials with friends",
+        b: "Ignore the issue and continue using the account",
+        c: "Change your password and enable additional security measures",
+        d: "Delete the account immediately"
+      },
+      correctAnswer: "c"
+    }
+  ];
+
+  function buildQuiz() {
+    const output = [];
+
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      const answers = [];
+
+      for (letter in currentQuestion.answers) {
+        answers.push(
+          `<label>
+            <input type="radio" name="question${questionNumber}" value="${letter}">
+            ${letter}: ${currentQuestion.answers[letter]}
+          </label>`
+        );
+      }
+
+      output.push(
+        `<div class="question">${currentQuestion.question}</div>
+        <div class="answers">${answers.join('')}</div>`
+      );
+    });
+
+    quizContainer.innerHTML = output.join('');
+  }
+
+  function showResults() {
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+    let numCorrect = 0;
+
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      if (userAnswer === currentQuestion.correctAnswer) {
+        numCorrect++;
+        answerContainers[questionNumber].querySelector(`input[value='${userAnswer}']`).parentElement.style.color = 'green'; // Highlight correct answer in green
+      } else {
+        answerContainers[questionNumber].querySelector(`input[value='${userAnswer}']`).parentElement.style.color = 'red'; // Highlight incorrect answer in red
+        answerContainers[questionNumber].querySelector(`input[value='${currentQuestion.correctAnswer}']`).parentElement.style.color = 'green'; // Highlight correct answer in green
+      }
+    });
+
+    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length} correct`;
+  }
+
+  buildQuiz();
+
+  submitButton.addEventListener('click', showResults);
+</script>
+
+</body>
+</html>
+
+{% endblock %}

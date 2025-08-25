@@ -1,0 +1,111 @@
+{% extends 'sidebar.html' %}
+
+{% block content %}
+{% load static %}
+<style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .fadeIn {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .card {
+        border: 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 20px 40px rgba(0, 123, 255, 0.2);
+    }
+
+    .card-body {
+        padding: 30px;
+    }
+
+    .display-4 {
+        font-size: 2.5rem;
+        color: #17a2b8;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .domain-info-stats {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .message {
+        text-align: center;
+        font-size: 1.5rem;
+        color: #6c757d;
+        margin-top: 20px;
+    }
+
+    body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+
+    
+</style>
+
+
+
+
+<div class="container">
+    
+    
+
+    <div class="card border-0 shadow mt-4 fadeIn">
+        <div class="card-body">
+            <h1 class="display-4 text-info text-center mb-4">URL Info</h1>
+            <hr>
+            <p class="domain-info-stats"><strong>Analysis for:</strong> {{ url }}</p>
+            <p class="domain-info-stats"><strong>Last Analysis Stats:</strong> {{ last_analysis_stats }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <ul class="list-group">
+            {% for key, value in k.items %}
+            <li class="list-group-item border-0">
+                <div class="d-flex align-items-center">
+                    <img src="https://html.designingmedia.com/whizcyber/assets/images/section2-list-img.png" alt="Icon" width="30" height="30">
+                    <h3 class="ml-3 mb-0">{{ key }}</h3>
+                </div>
+                {% if value == "unrated" %}
+                    <p class="mb-0 text-muted">The value is currently unrated.</p>
+                {% else %}
+                    <ul class="pl-4">
+                        {% for k, v in value.items %}
+                        <li class="mb-2">
+                            <span class="text-muted"><b><u>{{ k }}:</u></b></span> 
+                            {% if v == "clean" %}
+                                <span class="text-success ml-2">{{ v }}</span>
+                            {% else %}
+                                <span>{{ v }}</span>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="message">
+    Thank you for using our service!
+</div>
+
+<!-- JavaScript to toggle the loading spinner -->
+
+
+
+{% endblock %}

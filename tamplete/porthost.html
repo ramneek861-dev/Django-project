@@ -1,0 +1,157 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+      <style>
+        /* Define a class to apply animated border color */
+        .animated-border {
+            border: 3px solid  #00cccc ; /* Set initial border color (blue in this example) */
+            padding: 10px; /* Optional: Add padding for better appearance */
+            width: 370px; /* Optional: Set width for demonstration */
+            animation: animateBorder 1s infinite alternate; /* Apply animation to the border */
+        }
+
+        /* Define the animation */
+        @keyframes animateBorder {
+            0% {
+                border-color: #0000cc; /* Start with blue */
+            }
+            100% {
+                border-color: #3ee4ed ; /* End with red */
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+
+<div class="row">
+<div class="col-6">
+
+<br><br><BR>
+<h2 class="display-5 text-info"><b><img id="myImage" src="https://html.designingmedia.com/whizcyber/assets/images/section2-list-img.png" alt="My Image"> PORT<br>SCANNING WITH IP/HOSTNAME</b></h2>
+<br>
+<p><b>Welcome to our Intelliguard Cyber Port Scanning with the help of ip/hostname page, Port scanning with either an IP address or a hostname involves the systematic probing of network ports on a target device or network. Port scanning with an IP address directly targets a specific device by its numerical network identifier, while scanning with a hostname first resolves the hostname to its corresponding IP address before initiating the scan. This approach allows port scanning tools to target specific hosts identified by their domain names, providing flexibility in network reconnaissance and security assessment. </p></b>
+</div>
+
+    
+    <div class="col-5 mb-3">
+        <br><br><br>
+        <div class="card shadow animated-border">
+
+            <div class="card-body"><center><img src={%static "images/port.webp" %} width="60%" height="70%"></img></center>
+                <br><br><br>
+<form action="" method="POST" id="myForm" onsubmit="return validateForm()">
+    {% csrf_token %}
+            
+            <label><b>Enter Hostname</b></label>
+            <input type="text" placeholder="" class="form-control rounded-pill shadow"><br/>
+            <label><b>Enter IP address</b></label>
+            <input type="text" id="ipAddress" placeholder="" class="form-control rounded-pill shadow"><br/>
+            <div class="form-btn" align="center">
+               <button type="submit" class="btn btn-info btn-lg w-40 mb-3-10px rounded-pill">Scan</button>
+               <br><br>
+               </div>
+            
+        </div>
+    </form>
+    <script>
+function validateForm() {
+  var ipAddress = document.getElementById("ipAddress").value;
+  if (ipAddress == "") {
+    alert("Please fill in the IP address field.");
+    return false;
+  }
+  // Additional validation logic can be added here if needed
+  return true;
+}
+</script>
+</div>
+</div>
+<hr>
+<br><br>
+    <div class="col-md-5">
+      <img src={%static "images/lock3.png" %} width="90%">
+      <br><br><br><br>
+    </div>
+
+    <div class="col-md-6">
+<h2 class="display-5 text-info"><b>How Does<br>It Work?</b></h2>
+        <p><b>Port scanning, whether utilizing an IP address or a hostname, follows a standardized approach. Initially, packets are directed to the target device's IP address, with hostnames resolved to their corresponding IP addresses. The scanning tool methodically probes various port numbers on the target, sending packets and analyzing responses. These responses ascertain whether each probed port is open, closed, or filtered. Ultimately, this process aids in identifying accessible services and potential vulnerabilities within the target device or network.</b></p>
+    </div>
+</div>
+</div>
+</div>
+
+
+<div class="col-1"></div>
+<br>
+
+<div class="row">
+<div class="col-3"></div>
+    
+    <div class="col-5">
+<div class="card shadow animated-border">
+<div class="card-body">
+    <h3>1.Address Resolution</h3>
+    <p>When initiating a port scan with a hostname, the first step is to resolve the hostname to its corresponding IP address. This is typically done using DNS (Domain Name System) resolution. The port scanning tool queries the DNS server to obtain the IP address associated with the provided hostname.</p><br>
+</div>
+</div>
+<br>
+<br>
+<div class="card shadow animated-border">
+<div class="card-body">
+    <h3>2.Target Identification</h3>
+    <p>Once the IP address is obtained, whether directly provided or resolved from the hostname, the port scanning tool targets the identified device or network for port scanning. It sends network packets to the target device's IP address, probing for open ports and services.</p>
+</div>
+</div>
+
+</div>
+<div class="col-md-4 ">
+<div class="card shadow animated-border">
+<div class="card-body"><h3>3.Port Probing</h3>
+    <p>Port scanning tools operate by systematically probing a range of network ports on the target network. This process involves sending specialized packets to each port and then waiting for a response.If a response is received, it signifies that the port is open. then the port scanning tool analyzes it to determine the state of the probed port .
+</p>
+</div>
+</div>
+<br>
+<br>
+<div class="card shadow animated-border ">
+<div class="card-body">
+    <h3>4.Response Analysis</h3>
+    <p>It analyzes these responses to determine the state of each probed port. Open ports indicate active services that are listening for incoming connections, while closed ports indicate no active service is listening on that port.</p><br>
+</div>
+</div>
+</div>
+</div>
+<br><br>
+<!-- main div end below -->
+<div class="row justify-content-center">
+    <div class="col-5"></div> 
+        <div class="col-6 text-center">
+<div class="card shadow animated-border">
+<div class="card-body">
+    <h3>5.Reporting and Action</h3>
+    <p>Finally, the port scanning tool generates a report detailing the results of the scan, including a list of open ports, identified services, and potential vulnerabilities. This information can be used by network administrators for security assessments, vulnerability management, and network hardening.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<br><br>
+
+</body>
+</html>
+
+
+    
+{% endblock %}

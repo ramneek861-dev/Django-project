@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+     body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+    /* Define transition for card bodies */
+    .card-body {
+        transition: background-color 0.5s ease, color 0.5s ease; /* Add transition for color */
+    }
+
+    /* Define hover effect for card bodies */
+    .card-body:hover {
+        background-color: #f0f0f0; /* Change background color on hover */
+    }
+</style>
+<body>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="display-3" style="font-weight: 600;" id="changing-text">Cyber Security Laws</h1>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    {% for law in data %}
+    <div class="row mb-4">
+        <div class="col-md-10 offset-md-1">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <h2 class="card-title text-primary">{{ law.Law_category }}</h2>
+                    <h3 class="card-subtitle mb-2 text-muted">{{ law.Name }}</h3>
+                    <p class="card-text">{{ law.Description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    // Function to change text and background color randomly
+    function changeTextAndColor() {
+        var colors = ['#189BCC','#00C8FF']; // List of colors
+        var changingText = document.getElementById('changing-text');
+        var randomColor = colors[Math.floor(Math.random() * colors.length)]; // Select random color from the list
+        changingText.style.color = randomColor; // Apply the random color to the text
+    }
+
+    // Change text and background color every 3 seconds (3000 milliseconds)
+    setInterval(changeTextAndColor, 300);
+</script>
+</body>
+
+{% endblock %}

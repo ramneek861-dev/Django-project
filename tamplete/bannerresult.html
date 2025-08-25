@@ -1,0 +1,98 @@
+
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+    /* Custom styles for enhanced appearance */
+    .result-container {
+        animation: slide-up 0.5s ease-out;
+    }
+
+    @keyframes slide-up {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .list-group-item {
+        animation: fade-in 0.5s ease-out;
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .btn-refresh {
+        background-color: #17a2b8;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        padding: 8px 16px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-refresh:hover {
+        background-color: #138496;
+    }
+
+    .catch-up-message {
+        margin-top: 20px;
+        font-style: italic;
+        color: #6c757d;
+    }
+</style>
+
+<div class="container">
+    <div class="row p-4 border shadow mt-4">
+        <div class="col-12">
+            <h1 class="display-4 text-info text-center mb-4">Banner Grabbing Results</h1>
+            <hr class="my-4">
+        </div>
+        <div class="col-12">
+            <div class="result-container">
+                {% if result %}
+                    <ul class="list-group">
+                        {% for item in result %}
+                            <li class="list-group-item">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p class="text-muted text-center">No results found.</p>
+                {% endif %}
+            </div>
+            <div class="text-center mt-4">
+                <button class="btn btn-refresh" onclick="refreshResults()">Refresh</button>
+            </div>
+            <p class="catch-up-message text-center">Stay updated with the latest results! <i class="fas fa-sync-alt"></i></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript for refreshing results
+    function refreshResults() {
+        // Add your logic to refresh results here, e.g., AJAX call
+        // For demonstration purposes, let's reload the page
+        location.reload();
+    }
+</script>
+
+<!-- Font Awesome CDN for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+{% endblock %}

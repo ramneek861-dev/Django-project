@@ -1,0 +1,401 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" href="{%static 'icofont/icofont.min.css' %}">
+    <link rel="stylesheet" href="{%static 'css/aos.css' %}">
+    <style>
+        /* Custom styles to prevent unwanted movement */
+        body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .card-body {
+            transition: background-color 0.5s ease; /* Smooth background color transition */
+        }
+        
+        /* Ensure card width consistency */
+        .card {
+            width: 23rem;
+        }
+    </style>
+    <style>
+    .gradient-text {
+    background: linear-gradient(to right, #30e3f0,#a459eb,#30e3f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+ body {
+            margin: 0;
+            padding: 0;
+/*            overflow: hidden;*/
+        }
+
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+
+        .content-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+</style>
+
+  </head>
+  <body>
+   <video autoplay muted loop id="video-background">
+        <source src="{%static 'vedio/bgvd.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="content-overlay"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!-- NAVBAR  CODING START -->
+
+<!-- NAVBAR END HERE -->
+<!-- BODY CONTENT START HERE --> 
+
+<div class="row" >
+  <div class="col-md-1 pt-5"></div>
+  
+  <div class="col-md-4 pt-5">
+    <h1><font color="white" class="display-3"><b><div data-aos="zoom-in">Secure Your</div> </b></font></h1>
+<h1><font color="white" class="display-3"><b><div data-aos="zoom-in">Digital World, With Us</div></b></font></h1></br></br>
+<h4><font color="white"><i>"Uncover the World of Cyber Protection with Us"</i></font></h4>
+
+  </div>
+<div class="col-md-7" data-aos="fade-left"><img src={%static "images/security.png" %} align="right" height="90%" width="100%" ></div>
+</div>
+
+
+<BR><BR><BR><BR>
+<!-- ABOUT US START -->
+<div class="container">
+<div class="row">
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-5 pt-3" data-aos="fade-right"  ><img src='{%static "images/img1.png" %}'></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-3 pt-5" data-aos="fade-left">
+        <img src='{%static "images/img2.png" %}' height="60%"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9 pt-3 pb-3" data-aos="flip-right"><img src='{%static "images/img3.png" %}' width="90%"></div>
+    </div>
+    
+  </div>
+
+  <!-- second col de ander 2 sub col -->
+
+  <div class="col-md-6">
+    <br>
+  <br>
+     <center><h2><span class="gradient-text">ABOUT US </span></h2></center>
+    <p><font color="white"><b>Emark on a secure digital journey with Intelliguard Cyber. We blend innovation and expertise to provide cutting-edge cybersecurity solution. Trust us to fortify your online presence and navigate the ever-evolving lanscape of digital threads.Your security is our mission.</b></font>
+      <br><br>
+      <hr style="border-color:rgb(181, 7, 204) ; border-style: solid;"></p>
+    <!-- internal coloum -->
+    <br>
+    <br><br>
+    <div class="row">
+      <div class="col-md-12">
+     <center><h2><font  class><span class="gradient-text">WHO WE ARE</span></font></h2></center>
+    <p style="color:white"><b>Intelliguard Cyber is a passionate team of cybersecurity enthusiasts dedicated to making the digital world a safer place for everyone. We believe that cybersecurity should be accessible, and our user-friendly platform reflects that commitment.</p>
+    <p style="color:white">Join us on this journey of learning, empowerment, and protection. Together, let's build a safer digital future.</p>
+    <h5 style="color:white"><i>Stay Secure,</i></h5>
+    <h5 style="color:white"><i>The Intelliguard Cyber Team</i></h5>
+    <br><br>
+      
+      </div>
+    </div>
+  </div>
+   <hr style="border-color:rgb(181, 7, 204) ; border-style: solid;">
+</div>
+</div>
+<br><br>
+    <!-- our services -->
+<div class="container">
+  <div class="row pt-5">
+     <center><h5><font  class><span class="gradient-text" >OUR SERVICES</span></font></h5></center>
+     <center><h3> <font color="white">Elevate Your Security IQ with Intelliguard Cyber</font></h3></center>
+    <div class="col-md-4 pt-5">
+<div class="card" style="width: 20rem; height: 20rem;  border-color:rgb(187, 32, 235)">
+  <div class="card-body rounded-pill" style="background-color:white" data-aos="fade-down">
+    <h4 align="center" class="pt-3 text-black">Server Details/Banner Grabbing</h4>
+    <center><img src={%static "images/choose9.png" class="pt-4" %}></center>
+    <p align="center" class="pt-4 text-secondary" >Banner grabbing technique is used to gain information about the websites and the services running on its open ports.
+    </p>
+  </div>
+</div>
+</div>
+<div class="col-md-4 pt-5">
+ <div class="card" style="width: 18rem; height: 20rem; border-color:rgb(169, 26, 252)">
+  <div class="card-body" style="background-color:#000d33">
+    <h4 align="center" class="pt-3 text-white"> Port/Network Scanning</h4>
+    <center><img src={%static "images/choose6.png"  class="pt-4" %}></center>
+    <p align="center" class="pt-4 text-secondary">Cyber Security Tools will help us  to find various open ports on a website that we will include in our database. 
+    </p>
+    
+  </div>
+</div></div>
+<div class="col-md-4 pt-5">
+<div class="card " style="width: 18rem; height: 20rem; border-color:rgb(169, 26, 252)">
+  <div class="card-body rounded-pill " style="background-color:white" data-aos="fade-up">
+    <h4 align="center" class="pt-3 text-black" >Attack Types/Security Guidelines</h4>
+    <center><img src={%static "images/choose8.png" %} class="pt-4"></center>
+    <p align="center" class="pt- text-secondary">Provides the information about  various Attacks types, Malware, Virus, Cyber Security Laws, Trojan Hores, Spamming etc.</p>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</br>
+</br>
+</br></br>
+</br>
+<center><a href="{% url 'serv' %}"><button class="btn text-white border rounded-pill" style="background-color:#000d33; border-color:rgb(169, 26, 252)">View All Services</button></a></center>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+<!-- services end-->
+<!-- what we do start -->
+<hr style="border-color:rgb(181, 7, 204) ; border-style: solid;"></p>
+<div class="container">
+<div class="row">
+  <div class="col-md-6 pt-5"><br><br><br>
+    <div data-aos="fade-right"><img src={%static "images/what.png" %} width="90%"></div>
+  </div>
+  <div class="col-md-6 pt-3">
+     <h4><span class="gradient-text" style="background:linear-gradient(to right,#30e3f0,#a459eb,#30e3f0); -webkit-background-clip:text; color: transparent;">WHAT WE DO</span></h4>
+     <h1><font color="white" class="display-3"><b>The Perfect Solution For all Protection</b></font></h1>
+     <p><font color="white">At Intelliguard cyber, we provide a comprehensive cybersecurity solution. From in-depth guide on emerging threads to advanced security tools, we empower you to navigate the digital landscape securely. Our curated lists, latest news updates, and premium subscriptions ensures a comprehensive defense, maing Intelliguard Cyber your go-to platform for all-encompassing protection.</font></p>
+     <div class="row">
+     <div class="col-md-6 pt-5 ">
+      <h5><img src={%static "images/choose3.png" %} height="50px%" width="50px">&nbsp;&nbsp;<font color="white">In-Depth Guides</font></h5></br></br>
+      <h5><img src={%static "images/choose4.png" %} height="40px%" width="40px">&nbsp;&nbsp;&nbsp;<font color="white">Advanced Security<center> Tools</center></font></h5>
+      
+     </div>
+     <div class="col-md-6 pt-5">
+       <h5><img src={%static "images/choose5.png" %} height="50px%" width="50px">&nbsp;&nbsp;<font color="white">Latest News Updates</font></h5></br></br>
+      <h5>&nbsp;<img src={%static "images/choose2.png" %} height="40px%" width="40px">&nbsp;&nbsp;&nbsp;<font color="white">Curated Lists</font></h5>
+     </div>
+     </div>
+  </div>
+</div>
+</div>
+<br><br><br><br>
+<hr style="border-color:rgb(181, 7, 204) ; border-style: solid;"></p>
+<!-- what we do end-->
+
+<!-- Cyber Fraud start -->
+<marquee>
+    <h style="font-weight:bold; color:white; !important; font-size:16px;">In case of Cyber Financial Fraud, For immediate reporting ,Call 1930 (Earlier 155260).(24*7) . &nbsp;&nbsp;&nbsp; OR Visit <a href="https://cybercrime.gov.in/Webform/Crime_ReportAnonymously.aspx" target="_blank">https://cybercrime.gov.in/Webform/Crime_ReportAnonymously.aspx</a></h>
+  </marquee>
+  <br>
+  <br>
+<div class="container">
+  <h1><font color="white"><b>Cyber hygiene/Cyber Security/Prevention of Cyber Crimes</b></font></h1>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <img src={%static "images/lock4.png" %}>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <br><br><br><br><br><br><br><br>
+      <i class="icofont-shield-alt text-white p-2 rounded-circle"></i>
+      <a href="{%static 'cyber fraud/Financial Fraud Brochures final.pdf' %}" target="_blank" style="color:white; text-decoration: none;">Financial Fraud</a><br><br>
+
+      <i class="icofont-shield-alt text-white p-2 rounded-circle"></i>
+     <a href="{%static 'cyber fraud/Job Fraud Brochure Final.pdf' %}" target="_blank" style="color:white; text-decoration: none;">Job Fraud</a><br><br>
+
+      <i class="icofont-shield-alt text-white p-2 rounded-circle"></i>
+      <a href="{%static 'cyber fraud/Matrimonial fraud brochure final.pdf' %}" target="_blank" style="color:white; text-decoration: none;">Matrimonial fraud</a><br><br>
+
+      <i class="icofont-shield-alt text-white p-2 rounded-circle"></i>
+      <a href="{%static 'cyber fraud/Safe Use of social Media Platform Brochure final.pdf' %}" target="_blank"style="color:white; text-decoration: none;">Safe Use of social Media Platformx</a><br><br>
+
+      <i class="icofont-shield-alt text-white p-2 rounded-circle"></i>
+      <a href="{%static 'cyber fraud/Citizen Manual Report CPRGR complains-v10.pdf' %}" target="_blank" style="color:white; text-decoration: none;">Citizen Manual Report CPRGR complaints</a><br><br>
+
+      <i class="icofont-shield-alt text-white p-2 rounded-circle"></i>
+      <a href="{%static 'cyber fraud/Citizen Manual Report Other CyberCrime.pdf' %}" target="_blank" style="color:white; text-decoration: none;">Citizen Manual Report Other CyberCrime</a><br><br>
+
+      <i class="icofont-shield-alt text-white p-2 rounded-circle"></i>
+      <a href="{%static 'cyber fraud/Citizen Manual Financial Cyber Frauds Reporting and Management System-v10.pdf' %}" target="_blank" style="color:white; text-decoration: none;">Citizen Manual Financial Cyber Frauds<center>Reporting and Management System</center></a>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--  Cyber fraud end-->
+
+<!-- FAQ start -->
+<div class="container">
+<div class="row">
+  <div class="col-md-6 pt-5">
+    <br>
+    <br>
+    <br>
+    <h4><span class="gradient-text">FAQ</span></h4><br>
+    <h1><font color="white"><b>Still confused about our features?</b></font></h1>
+    <p><font color="white">Empowering Security, Answering Questions:Your Intelliguard Cyber</font></p>
+       </div>
+
+
+
+  <div class="col-md-6 pt-5">
+     
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        What is INTELLIGUARD CYBER?
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <p>INTELLIGUARD CYBER is a comprehensive cybersecurity platform designed to empower users with knowlegde and tools to enhance their online safety.</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        What services does INTELLIGUARD CYBER offer?
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <p>INTELLIGUARD CYBER provides in-depth guides on cybersecurity tools, curated lists of trusted resources, and the latest news updates to keep you informed.</p>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<center><a href="{% url 'faq' %}"><button class="btn text-white border rounded-pill" style="background-color:#000d33; border-color:rgb(169, 26, 252)">View All FAQs</button></a></center>
+ <br><br><hr></div>
+     </form>
+<!-- FAQ end-->
+
+
+<style>
+  /* Styles for the cards */
+  .card {
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+  }
+
+  /* Styles for the content inside the cards */
+  .card-content {
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .card-text {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+
+  .card-user {
+    font-size: 17px;
+    color: #777;
+  }
+</style>
+</head>
+<body>
+<div class="row">
+{% for i in data %}
+
+<div class="col-md-4">
+<div class="card">
+  <div class="card-content">
+    <p class="card-title">TITLE-->{{ i.Title }}</p>
+    <p class="card-text">Message-->{{ i.Message }}</p>
+    <p class="card-user">Review By-->  {{ i.User }}</p>
+  </div>
+</div>
+</div>
+
+
+
+
+{% endfor %}
+</div>
+</body>
+</html>
+
+<br><br><br><hr>
+
+<script src="{%static 'js/aos.js' %}"></script>
+<script>
+AOS.init()
+</script> 
+  </body>
+</html>
+{% endblock %}

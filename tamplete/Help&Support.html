@@ -1,0 +1,55 @@
+{% extends 'sidebar.html'%}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help & Support</title>
+  <style>
+        /* Define a class to apply animated border color */
+        .animated-border {
+            border: 3px solid  #00cccc ; /* Set initial border color (blue in this example) */
+            padding: 10px; /* Optional: Add padding for better appearance */
+            width: 370px; /* Optional: Set width for demonstration */
+            animation: animateBorder 1s infinite alternate; /* Apply animation to the border */
+        }
+
+        /* Define the animation */
+        @keyframes animateBorder {
+            0% {
+                border-color: #0000cc; /* Start with blue */
+            }
+            100% {
+                border-color: #3ee4ed; /* End with red */
+            }
+        }
+    </style>
+</head><br><br><center><h2 class="display-2 text-info"><b><img id="myImage" src="https://html.designingmedia.com/whizcyber/assets/images/section2-list-img.png" alt="My Image">HELP AND SUPPORT</h2></center>
+<hr>
+<div class="row">
+  <div class="col-md-6">
+    <img src='{%static "images/helpandsupport.webp" %}' height="90%" width="90%"></img>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card shadow animated-border">
+   <form><br>
+    <center><img src='{%static "images/sarawat.webp" %}' height="50%" width="50%"></img></center>
+    <input  class="form-control  border-info rounded-pill" type="text" name="" placeholder="Title">
+     <i class="fa fa-pencil text-info"></i><textarea class="form-control  border-info rounded-pill" id="review" placeholder="Message" rows="3"></textarea><br>
+     <center><button class="btn rounded-pill text-white btn-info">Submit</button></center>
+   </form>
+   </div>
+  </div>
+</div>
+<br>
+<hr>
+<br>
+<br>
+<body>
+
+</body>
+</html>
+{% endblock %}

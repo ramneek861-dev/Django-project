@@ -1,0 +1,63 @@
+{%extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Us</title>
+	<link rel="stylesheet" type="text/css" href="{%static 'css\bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{%static 'intelli.css'%}">'
+    <link rel="stylesheet" type="text/css" href="{%static 'icofont/icofont.min.css' %}">
+    <style>
+        /* Custom styles to prevent unwanted movement */
+        body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .card-body {
+            transition: background-color 0.5s ease; /* Smooth background color transition */
+        }
+        
+        /* Ensure card width consistency */
+        .card {
+            width: 23rem;
+        }
+    </style>
+</head>
+<body>
+<div class="row p-4 text-center">
+	 <h1 align="center" class="display-3 text-info" ><b>About Us</b></font></h1>
+	</div>	 
+
+<div class="row">
+<div class="col-md-1"></div>
+
+<div class="col-md-5 pt-5 ">
+	<img src='{%static "images/about.png" %}'  width="100%" height="100%" >
+</div>
+<div class="col-md-5 bg-white  pt-5">
+	<h1><font color="black" class="display-4"><b>Welcome to <font style="color:#3ee4ed ">Intelliguard Cyber</font></b></font></h1><br>
+	<p><font color="black">your go-to resource for navigating the ever-evolving landscape of cyber threads. At INTELLIGUARD CYBER, we understand that staying safe online is crucial, and we are here to empower you with knowledge and tools to fortify your digital defenses.</font></p>
+	<p><font color="black">Our mission is to provide a user-friendly platform that demystifies cybersecurity, making it accessible to everyone. Whether you're a seasoned professional or just staring your journey into the digital realm, we've got you covered.</font></p></div>
+<div class="col-md-1"></div>
+
+</div>
+
+<div class="row mt-5">
+	<div class="col-md-1 " ></div>
+	<div class="col-md-5  pt-5"  style="border-top-right-radius: 50px; border-top-left-radius: 50px; border-bottom-left-radius: 50px;border-bottom-right-radius: 50px;">
+		<h1 align="center"><font color="black" class="display-4"><b>What<font color="#30e3f0"> We </font>Offer</b></font></h1><br>
+	<p class="text-black">We're here to simpliy cybersecurity for you, offering easy-to-understand guides on various threats like malware,phishing, and more.Exlore our advanced security tools for checking files, URLs, and staying informed about the latest news and attacks.</p>
+	<p><font color="black">Discover curated lists of phishing websites,recommended security tools like Intruder and Bitdefender, and ge insights into cyber laws. Our timely alerts ensure quick detection of potential risks. Join us on this journey of learning and empoerment. Together, let's build a safer digital future because your security matters.</font></p></div>
+	
+	<div class="col-md-6 pt-4"> 
+			<img src='{%static "images/about2.png" %}' width="100%" height="100%">
+	</div>
+</div>
+<br>
+<br><br>	
+
+
+</body>
+</html>
+{% endblock %}
